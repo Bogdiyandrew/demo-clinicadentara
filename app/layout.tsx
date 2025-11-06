@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import LeftSidebar from './components/LeftSidebar';
-import MobileHeader from './components/MobileHeader'; // 1. Importă noul header
+import MobileHeader from './components/MobileHeader';
+import Footer from './components/Footer'; // 1. Importă noul Footer
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,22 +21,21 @@ export default function RootLayout({
     <html lang="ro">
       <body className={inter.className}>
         
+        {/* Containerul principal flexibil (Sidebar + Conținut) */}
         <div className="flex min-h-screen bg-gray-100">
           
-          {/* 1. Sidebar (Desktop) - este 'hidden md:flex' */}
           <LeftSidebar />
 
-          {/* 2. Conținutul principal (Mobil + Desktop) */}
           <div className="w-full md:flex-1 md:overflow-y-auto relative">
-            
-            {/* 2a. Header-ul de Mobil - este 'md:hidden' */}
-            <MobileHeader /> {/* 2. Adaugă componenta aici */}
-            
-            {/* 2b. Conținutul paginii */}
+            <MobileHeader />
             {children}
           </div>
 
         </div>
+
+        {/* 2. Adaugă Footer-ul aici, în afara div-ului flexibil */}
+        <Footer /> 
+
       </body>
     </html>
   );

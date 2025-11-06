@@ -29,7 +29,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
             value={name}
             onChange={(e) => onUpdateData('name', e.target.value)}
             required
-            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500"
+            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-gray-900"
           />
         </div>
 
@@ -44,7 +44,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
             value={phone}
             onChange={(e) => onUpdateData('phone', e.target.value)}
             required
-            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500"
+            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-gray-900"
           />
         </div>
 
@@ -59,7 +59,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
             value={email}
             onChange={(e) => onUpdateData('email', e.target.value)}
             required
-            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500"
+            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-gray-900"
           />
         </div>
       </div>

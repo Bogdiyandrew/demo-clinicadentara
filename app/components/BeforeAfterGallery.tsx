@@ -21,13 +21,28 @@ export default function BeforeAfterGallery() {
 
         {/* Componenta Slider */}
         <div className="mt-16">
-          <BeforeAfterSlider />
+          
+          {/*
+            AICI ESTE CORECTURA:
+            Am adăugat proprietățile 'beforePlaceholder' și 'afterPlaceholder'
+            pe care componenta le așteaptă acum.
+          */}
+          <BeforeAfterSlider 
+            beforePlaceholder={{ color: 'bg-red-400', label: 'ÎNAINTE' }}
+            afterPlaceholder={{ color: 'bg-green-400', label: 'DUPĂ' }}
+          />
         </div>
 
         {/* Într-un site real, ai putea avea mai multe slidere aici:
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <BeforeAfterSlider />
-            <BeforeAfterSlider />
+            <BeforeAfterSlider 
+              beforePlaceholder={{ color: 'bg-blue-400', label: 'ÎNAINTE' }}
+              afterPlaceholder={{ color: 'bg-teal-400', label: 'DUPĂ' }}
+            />
+            <BeforeAfterSlider 
+              beforePlaceholder={{ color: 'bg-indigo-400', label: 'ÎNAINTE' }}
+              afterPlaceholder={{ color: 'bg-purple-400', label: 'DUPĂ' }}
+            />
           </div>
         */}
 

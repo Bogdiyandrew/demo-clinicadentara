@@ -1,25 +1,25 @@
+// app/page.tsx
+
+// 1. Asigură-te că imporți componentele corecte
 import HeroSection from './components/HeroSection';
 import FeaturedServices from './components/FeaturedServices';
 import Testimonials from './components/Testimonials';
-
-function BeforeAfterGallery() {
-  return (
-    <section aria-label="Before and after gallery">
-      <h2>Before &amp; After</h2>
-      <p>Gallery coming soon.</p>
-    </section>
-  );
-}
+import BeforeAfterGallery from './components/BeforeAfterGallery'; // <-- Importul acesta
+import FinalCTA from './components/FinalCTA'; 
 
 export default function Home() {
-  // Am scos tag-ul <main> care învelea componentele.
-  // Folosim un fragment <>...</>
   return (
     <>
       <HeroSection />
       <FeaturedServices />
       <Testimonials />
-      <BeforeAfterGallery />
+      
+      {/* 2. Aici trebuie să folosești componenta, 
+           NU textul "coming soon".
+      */}
+      <BeforeAfterGallery /> 
+
+      <FinalCTA />
     </>
   );
 }

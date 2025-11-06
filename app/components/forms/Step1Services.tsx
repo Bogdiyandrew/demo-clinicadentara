@@ -36,7 +36,7 @@ export default function Step1Services({ onNext, onSelectService, currentService 
             onClick={() => handleSelect(service.name)}
             className={`
               flex flex-col items-center justify-center p-8 rounded-lg border-2 
-              transition-all duration-200
+              transition-all duration-200 cursor-pointer  
               ${currentService === service.name
                 ? 'border-sky-600 bg-sky-50 shadow-lg' // Stil activ
                 : 'border-gray-300 bg-gray-50 hover:border-sky-500 hover:bg-white' // Stil inactiv
