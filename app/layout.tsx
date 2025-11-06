@@ -3,13 +3,16 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import LeftSidebar from './components/LeftSidebar';
 import MobileHeader from './components/MobileHeader';
-import Footer from './components/Footer'; // 1. Importă noul Footer
+import Footer from './components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'ClinicDemo - Zâmbetul Tău Perfect',
   description: 'Demo uimitor pentru o clinică dentară modernă.',
+  icons: {
+    icon: '/lloogo.png', // favicon-ul corect
+  },
 };
 
 export default function RootLayout({
@@ -19,23 +22,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
       <body className={inter.className}>
-        
-        {/* Containerul principal flexibil (Sidebar + Conținut) */}
+        {/* Container principal: Sidebar + Conținut */}
         <div className="flex min-h-screen bg-gray-100">
-          
           <LeftSidebar />
-
           <div className="w-full md:flex-1 md:overflow-y-auto relative">
             <MobileHeader />
             {children}
           </div>
-
         </div>
 
-        {/* 2. Adaugă Footer-ul aici, în afara div-ului flexibil */}
-        <Footer /> 
-
+        {/* Footer-ul, plasat corect în afara containerului principal */}
+        <Footer />
       </body>
     </html>
   );
