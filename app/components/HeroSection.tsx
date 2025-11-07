@@ -96,13 +96,13 @@ export default function HeroSection() {
       initial="hidden"
       animate="visible"
     >
-      {/* Background gradients */}
+
       <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-sky-950 to-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.15),transparent_50%)]" />
       </div>
 
-      {/* Floating particles */}
+
       {isMounted && particlePositions.map((pos, i) => (
         <motion.div
           key={i}
@@ -127,7 +127,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
-          {/* Left side - Text content */}
+
           <div className="text-center lg:text-left">
             
             <motion.div
@@ -182,7 +182,7 @@ export default function HeroSection() {
               </Link>
             </motion.div>
 
-            {/* Benefits cards - Hidden on mobile, shown on lg+ */}
+
             <motion.div
               variants={childVariants}
               className="hidden lg:grid grid-cols-3 gap-4"
@@ -205,16 +205,16 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right side - Image */}
+
           <motion.div
             variants={imageVariants}
             className="relative"
           >
-            {/* Decorative elements around image */}
+
             <div className="absolute -inset-4 bg-linear-to-r from-sky-500/20 to-blue-500/20 rounded-3xl blur-2xl" />
             <div className="absolute -inset-2 bg-linear-to-br from-sky-400/10 to-blue-600/10 rounded-3xl" />
             
-            {/* Main image container */}
+
             <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl backdrop-blur-sm bg-white/5">
               <Image
                 src="/herosection.png"
@@ -225,10 +225,10 @@ export default function HeroSection() {
                 className="w-full h-auto object-cover"
               />
               
-              {/* Gradient overlay */}
+
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent" />
               
-              {/* Floating badge on image */}
+
               <motion.div
                 className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl"
                 initial={{ opacity: 0, y: 20 }}
@@ -249,7 +249,7 @@ export default function HeroSection() {
               </motion.div>
             </div>
 
-            {/* Floating decorative shapes */}
+
             {isMounted && (
               <>
                 <motion.div
@@ -274,7 +274,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Benefits cards - Mobile version below */}
+
         <motion.div
           variants={childVariants}
           className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mt-12 lg:hidden"
@@ -297,7 +297,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

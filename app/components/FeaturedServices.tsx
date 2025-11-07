@@ -106,7 +106,7 @@ const iconVariants: Variants = {
   },
 };
 
-// Poziții fixe pentru floating shapes
+
 const floatingShapes = [
   { size: 400, left: 10, top: 15, color: 'bg-sky-300/10', delay: 0 },
   { size: 300, left: 75, top: 10, color: 'bg-blue-400/10', delay: 2 },
@@ -115,7 +115,7 @@ const floatingShapes = [
   { size: 200, left: 20, top: 75, color: 'bg-indigo-300/10', delay: 3 },
 ];
 
-// Poziții pentru particule mici
+
 const smallParticles = [
   { left: 15, top: 25, size: 8, color: 'bg-sky-400/40' },
   { left: 30, top: 45, size: 6, color: 'bg-blue-400/30' },
@@ -142,10 +142,10 @@ export default function FeaturedServices() {
       viewport={{ once: true, amount: 0.15 }}
       variants={containerVariants}
     >
-      {/* Animated gradient background */}
+
       <div className="absolute inset-0 bg-linear-to-br from-sky-50/50 via-white to-blue-50/50" />
       
-      {/* Grid pattern overlay */}
+
       <div className="absolute inset-0 opacity-[0.015]">
         <div className="absolute inset-0" style={{
           backgroundImage: `
@@ -156,7 +156,7 @@ export default function FeaturedServices() {
         }} />
       </div>
 
-      {/* Large floating shapes with blur - render doar după mount */}
+
       {isMounted && (
         <div className="absolute inset-0 pointer-events-none">
           {floatingShapes.map((shape, index) => (
@@ -194,7 +194,7 @@ export default function FeaturedServices() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-purple-200/10 via-transparent to-transparent rounded-full blur-3xl" />
       </div>
 
-      {/* Small animated particles - render doar după mount */}
+
       {isMounted && smallParticles.map((particle, index) => (
         <motion.div
           key={index}
@@ -233,7 +233,7 @@ export default function FeaturedServices() {
         />
       </div>
 
-      {/* Geometric shapes */}
+
       {isMounted && (
         <>
           <motion.div
@@ -259,7 +259,7 @@ export default function FeaturedServices() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         
-        {/* Header Section */}
+
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -299,7 +299,7 @@ export default function FeaturedServices() {
           </motion.p>
         </div>
 
-        {/* Services Grid */}
+
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           variants={containerVariants}
@@ -316,10 +316,10 @@ export default function FeaturedServices() {
                 href={service.href}
                 className="relative flex flex-col h-full p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
               >
-                {/* Gradient overlay on hover */}
+
                 <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                 
-                {/* Animated border gradient */}
+
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className={`absolute inset-0 rounded-3xl bg-linear-to-br ${service.gradient} ${service.hoverGradient} p-0.5]`}>
                     <div className="w-full h-full bg-white/80 backdrop-blur-sm rounded-3xl" />
@@ -327,7 +327,7 @@ export default function FeaturedServices() {
                 </div>
 
                 <div className="relative z-10">
-                  {/* Icon with gradient background */}
+
                   <motion.div
                     variants={iconVariants}
                     className={`inline-flex p-4 bg-linear-to-br ${service.gradient} rounded-2xl mb-6 shadow-lg`}
@@ -335,7 +335,7 @@ export default function FeaturedServices() {
                     <service.icon className="w-8 h-8 text-white" />
                   </motion.div>
 
-                  {/* Content */}
+
                   <h3 className="text-2xl font-bold text-gray-900 group-hover:text-sky-700 transition-colors duration-300 mb-3">
                     {service.title}
                   </h3>
@@ -344,7 +344,7 @@ export default function FeaturedServices() {
                     {service.description}
                   </p>
 
-                  {/* CTA with arrow */}
+
                   <div className="flex items-center gap-2 text-sky-600 font-semibold group-hover:gap-4 transition-all duration-300">
                     <span>Află mai mult</span>
                     <motion.div
@@ -356,7 +356,7 @@ export default function FeaturedServices() {
                     </motion.div>
                   </div>
 
-                  {/* Decorative elements */}
+
                   <div className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} rounded-full blur-2xl opacity-20`} />
                   </div>
@@ -366,7 +366,7 @@ export default function FeaturedServices() {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

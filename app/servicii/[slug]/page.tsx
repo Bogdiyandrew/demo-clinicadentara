@@ -1,11 +1,9 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-// Folosim calea relativă
 import { serviceDatabase } from '../../../lib/serviceDatabase';
 import { CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 
-// Importăm și tipul
 import type { Service } from '../../../lib/serviceDatabase';
 
 
@@ -15,14 +13,10 @@ interface ServicePageProps {
   };
 }
 
-// Această funcție este sincronă, e în regulă
 function getServiceBySlug(slug: string): Service | undefined {
   return serviceDatabase[slug];
 }
 
-//
-// ASIGURĂ-TE CĂ 'async' ESTE AICI (linia 25)
-//
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params; // AICI trebuie await
   const service = getServiceBySlug(slug);
@@ -34,7 +28,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <div className="bg-white min-h-screen">
       
-      {/* 1. Hero-ul Paginii de Serviciu */}
+
       <div className="bg-gray-900 text-white py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -44,14 +38,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </div>
 
-      {/* 2. Conținutul Principal (Layout cu Sidebar) */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
-          {/* ----- Coloana Principală (Stânga) ----- */}
           <div className="lg:col-span-2 space-y-12">
             
-            {/* Secțiunea "Ce este?" */}
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Ce este {service.title}?
@@ -61,7 +52,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </p>
             </section>
 
-            {/* Secțiunea "Etapele Tratamentului" */}
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Etapele Tratamentului
@@ -81,10 +71,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
           </div>
 
-          {/* ----- Sidebar (Dreapta) ----- */}
           <aside className="lg:col-span-1 space-y-8 sticky top-24 h-fit">
             
-            {/* Card Beneficii */}
             <div className="bg-gray-50 rounded-lg shadow-lg p-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-5">
                 Beneficii Cheie
@@ -92,14 +80,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <ul className="space-y-4">
                 {service.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircleIcon className="flex-shrink-0 w-6 h-6 text-green-500 mt-1" />
+                    <CheckCircleIcon className="shrink-0 w-6 h-6 text-green-500 mt-1" />
                     <span className="ml-3 text-lg text-gray-700">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            {/* Card CTA (Call to Action) */}
             <div className="bg-sky-700 text-white rounded-lg shadow-lg p-8 text-center">
               <h3 className="text-3xl font-extrabold mb-4">
                 Sunteți pregătit?

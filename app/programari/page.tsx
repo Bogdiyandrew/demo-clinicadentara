@@ -55,7 +55,7 @@ export default function ProgramariPage() {
     setIsSubmitted(true);
   };
 
-  // Success Screen
+
   if (isSubmitted) {
     const formattedDate = formData.date
       ? format(formData.date, "EEEE, d MMMM yyyy", { locale: ro })
@@ -63,7 +63,7 @@ export default function ProgramariPage() {
       
     return (
       <div className="min-h-screen bg-linear-to-br from-slate-50 via-sky-50 to-slate-50 flex items-center justify-center p-6">
-        {/* Decorative background */}
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-20 w-72 h-72 bg-sky-200/30 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl" />
@@ -75,7 +75,7 @@ export default function ProgramariPage() {
           transition={{ duration: 0.5 }}
           className="relative max-w-2xl w-full bg-white rounded-3xl shadow-2xl p-8 sm:p-12 border border-gray-100"
         >
-          {/* Success Icon */}
+
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -94,7 +94,7 @@ export default function ProgramariPage() {
             </div>
           </motion.div>
 
-          {/* Success Message */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function ProgramariPage() {
             </p>
           </motion.div>
 
-          {/* Appointment Details Card */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export default function ProgramariPage() {
             </div>
           </motion.div>
 
-          {/* Info Message */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function ProgramariPage() {
             </p>
           </motion.div>
 
-          {/* Action Button */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -195,10 +195,10 @@ export default function ProgramariPage() {
     );
   }
 
-  // Main Form
+
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-sky-50 to-slate-50">
-      {/* Decorative background */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />
@@ -206,14 +206,14 @@ export default function ProgramariPage() {
 
       <div className="relative max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         
-        {/* Header */}
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          {/* Badge */}
+
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-sky-100 border border-sky-200 rounded-full mb-6">
             <Calendar className="w-4 h-4 text-sky-600" />
             <span className="text-sm font-semibold text-sky-700 uppercase tracking-wider">
@@ -232,7 +232,7 @@ export default function ProgramariPage() {
           </p>
         </motion.div>
 
-        {/* Progress Bar */}
+
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -241,7 +241,7 @@ export default function ProgramariPage() {
           <StepProgressBar currentStep={currentStep} totalSteps={3} />
         </motion.div>
 
-        {/* Form Steps with Animation */}
+
         <motion.div
           className="mt-12 bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border border-gray-100"
           initial={{ opacity: 0, y: 20 }}
@@ -301,7 +301,7 @@ export default function ProgramariPage() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Back to home link */}
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'ClinicDemo - Zâmbetul Tău Perfect',
   description: 'Demo uimitor pentru o clinică dentară modernă.',
   icons: {
-    icon: '/lloogo.png', // favicon-ul corect
+    icon: '/laga.png',
   },
 };
 
@@ -26,7 +26,6 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" type="image/png" />
       </head>
       <body className={inter.className}>
-        {/* Container principal: Sidebar + Conținut */}
         <div className="flex min-h-screen bg-gray-100">
           <LeftSidebar />
           <div className="w-full md:flex-1 md:overflow-y-auto relative">
@@ -34,8 +33,6 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-
-        {/* Footer-ul, plasat corect în afara containerului principal */}
         <Footer />
       </body>
     </html>

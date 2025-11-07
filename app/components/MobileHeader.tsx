@@ -39,7 +39,7 @@ export default function MobileHeader() {
 
   return (
     <>
-      {/* Header principal */}
+
       <motion.header 
         className="lg:hidden sticky top-0 z-40 bg-slate-950/95 backdrop-blur-md border-b border-white/5 shadow-xl"
         initial={{ y: -100 }}
@@ -48,7 +48,7 @@ export default function MobileHeader() {
       >
         <div className="flex items-center justify-between px-4 py-4">
           
-          {/* Logo */}
+
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-linear-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/30">
               <Sparkles className="w-5 h-5 text-white" />
@@ -61,7 +61,7 @@ export default function MobileHeader() {
             </div>
           </Link>
 
-          {/* Hamburger Button */}
+
           <motion.button
             type="button"
             className="relative p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all"
@@ -73,11 +73,11 @@ export default function MobileHeader() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay & Panel */}
+
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Backdrop */}
+
             <motion.div
               className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden"
               initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ export default function MobileHeader() {
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             >
-              {/* Decorative background */}
+
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 -right-20 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-20 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl" />
@@ -102,7 +102,7 @@ export default function MobileHeader() {
 
               <div className="relative h-full flex flex-col p-6">
                 
-                {/* Header with logo and close button */}
+
                 <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
                   <Link 
                     href="/" 
@@ -130,7 +130,7 @@ export default function MobileHeader() {
                   </motion.button>
                 </div>
 
-                {/* Navigation Links */}
+
                 <nav className="flex-1 space-y-2 mb-6">
                   {navigation.map((item, index) => {
                     const isActive = pathname === item.href;
@@ -152,7 +152,7 @@ export default function MobileHeader() {
                               : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent hover:border-white/10'
                           }`}
                         >
-                          {/* Active indicator */}
+
                           {isActive && (
                             <motion.div
                               layoutId="activeMobileTab"
@@ -178,7 +178,7 @@ export default function MobileHeader() {
                   })}
                 </nav>
 
-                {/* Contact Info Card */}
+
                 <motion.div
                   className="mb-6 p-5 bg-linear-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 rounded-2xl"
                   initial={{ opacity: 0, y: 20 }}
@@ -211,7 +211,7 @@ export default function MobileHeader() {
                   </div>
                 </motion.div>
 
-                {/* CTA Button */}
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -230,7 +230,7 @@ export default function MobileHeader() {
                   </Link>
                 </motion.div>
 
-                {/* Status indicator */}
+
                 <motion.div
                   className="mt-4 pt-4 border-t border-white/5 flex items-center justify-center gap-2 text-xs text-gray-500"
                   initial={{ opacity: 0 }}

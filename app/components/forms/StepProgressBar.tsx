@@ -16,12 +16,9 @@ export default function StepProgressBar({ currentStep }: Props) {
     <nav aria-label="Progress">
       <ol role="list" className="flex items-center">
         {steps.map((step, stepIdx) => (
-          //
-          // AICI ESTE CORECTURA: Am adăugat clasa 'relative'
-          //
           <li key={step.name} className={`relative flex-1 ${stepIdx < steps.length - 1 ? 'pr-8 sm:pr-20' : ''}`}>
             {currentStep > step.id ? (
-              // Pas Completat
+
               <div className="group flex items-center">
                 <span className="flex items-center justify-center w-10 h-10 bg-sky-600 rounded-full">
                   <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -31,7 +28,7 @@ export default function StepProgressBar({ currentStep }: Props) {
                 <span className="ml-4 text-sm font-medium text-gray-900">{step.name}</span>
               </div>
             ) : currentStep === step.id ? (
-              // Pas Curent
+
               <div className="flex items-center" aria-current="step">
                 <span className="flex items-center justify-center w-10 h-10 border-2 border-sky-600 rounded-full">
                   <span className="text-sky-600">{`0${step.id}`}</span>
@@ -39,7 +36,7 @@ export default function StepProgressBar({ currentStep }: Props) {
                 <span className="ml-4 text-sm font-medium text-sky-600">{step.name}</span>
               </div>
             ) : (
-              // Pas Viitor
+
               <div className="group flex items-center">
                 <span className="flex items-center justify-center w-10 h-10 border-2 border-gray-300 rounded-full">
                   <span className="text-gray-500">{`0${step.id}`}</span>

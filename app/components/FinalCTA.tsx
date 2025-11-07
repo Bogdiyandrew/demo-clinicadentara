@@ -7,15 +7,15 @@ import { Calendar, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-950 via-sky-950 to-slate-900 py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-liniar-to-br from-slate-950 via-sky-950 to-slate-900 py-24 sm:py-32 overflow-hidden">
       
-      {/* Decorative background elements */}
+
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Grid pattern overlay */}
+
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
           backgroundImage: `
@@ -28,7 +28,7 @@ export default function FinalCTA() {
 
       <div className="relative max-w-5xl mx-auto text-center px-6 lg:px-8">
         
-        {/* Badge */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function FinalCTA() {
           </span>
         </motion.div>
 
-        {/* Heading */}
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,12 +51,12 @@ export default function FinalCTA() {
           className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight"
         >
           Ești pregătit să-ți transformi{' '}
-          <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-sky-400 bg-clip-text text-transparent">
+          <span className="bg-liniar-to-r from-sky-400 via-blue-500 to-sky-400 bg-clip-text text-transparent">
             zâmbetul?
           </span>
         </motion.h2>
 
-        {/* Description */}
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function FinalCTA() {
           Nu mai amâna. Programează o consultație astăzi și descoperă planul de tratament personalizat pentru tine.
         </motion.p>
 
-        {/* CTA Buttons */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function FinalCTA() {
               Programează-te Online
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-100 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-liniar-to-r from-sky-100 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
           
           <Link
@@ -95,7 +95,7 @@ export default function FinalCTA() {
           </Link>
         </motion.div>
 
-        {/* Trust indicators */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -57,13 +57,13 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Grid-ul devine 'motion.div' */}
+
         <motion.div
           className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
         >
           {testimonials.map((testimonial) => (
-            // Fiecare card devine 'motion.div'
+
             <motion.div key={testimonial.name} variants={cardVariants} className="flex flex-col bg-gray-800 rounded-2xl shadow-lg p-8">
               
               <div>

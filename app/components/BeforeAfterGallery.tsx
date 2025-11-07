@@ -1,13 +1,13 @@
 import React from 'react';
-import BeforeAfterSlider from './BeforeAfterSlider'; // Importăm componenta client
+import BeforeAfterSlider from './BeforeAfterSlider'; 
 
 export default function BeforeAfterGallery() {
   return (
-    // Folosim un fundal alb, similar cu secțiunea de Servicii
+
     <section className="bg-white py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        {/* Titlul Secțiunii */}
+
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-base font-semibold leading-7 text-sky-600">Rezultate Reale</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -19,32 +19,13 @@ export default function BeforeAfterGallery() {
           </p>
         </div>
 
-        {/* Componenta Slider */}
+
         <div className="mt-16">
-          
-          {/*
-            AICI ESTE CORECTURA:
-            Am adăugat proprietățile 'beforePlaceholder' și 'afterPlaceholder'
-            pe care componenta le așteaptă acum.
-          */}
           <BeforeAfterSlider 
             beforePlaceholder={{ color: 'bg-red-400', label: 'ÎNAINTE' }}
             afterPlaceholder={{ color: 'bg-green-400', label: 'DUPĂ' }}
           />
         </div>
-
-        {/* Într-un site real, ai putea avea mai multe slidere aici:
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <BeforeAfterSlider 
-              beforePlaceholder={{ color: 'bg-blue-400', label: 'ÎNAINTE' }}
-              afterPlaceholder={{ color: 'bg-teal-400', label: 'DUPĂ' }}
-            />
-            <BeforeAfterSlider 
-              beforePlaceholder={{ color: 'bg-indigo-400', label: 'ÎNAINTE' }}
-              afterPlaceholder={{ color: 'bg-purple-400', label: 'DUPĂ' }}
-            />
-          </div>
-        */}
 
       </div>
     </section>

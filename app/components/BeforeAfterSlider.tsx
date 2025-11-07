@@ -1,13 +1,12 @@
-// Marcăm aceasta ca o Componentă Client deoarece are nevoie de interactivitate
 'use client';
 
 import React, { useState, useRef, useCallback } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
-// Definim tipul pentru props
+
 interface PlaceholderProps {
-  color: string; // ex: 'bg-red-400'
-  label: string; // ex: 'ÎNAINTE'
+  color: string; 
+  label: string; 
 }
 
 interface SliderProps {
@@ -20,7 +19,7 @@ export default function BeforeAfterSlider({ beforePlaceholder, afterPlaceholder 
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Funcție pentru a gestiona mișcarea (atât mouse cât și touch)
+
   const handleMove = useCallback((clientX: number) => {
     if (!isDragging || !containerRef.current) return;
     const bounds = containerRef.current.getBoundingClientRect();
@@ -51,18 +50,14 @@ export default function BeforeAfterSlider({ beforePlaceholder, afterPlaceholder 
       onTouchEnd={handleTouchEnd}
       onTouchMove={handleTouchMove}
     >
-      {/* Imaginea/Placeholder-ul "Înainte" (stânga)
-        Folosim props pentru culoare și text
-      */}
+
       <div className={`absolute inset-0 w-full h-full flex items-center justify-center ${beforePlaceholder.color}`}>
         <span className="text-4xl font-bold text-white opacity-70">
           {beforePlaceholder.label}
         </span>
       </div>
 
-      {/* Imaginea/Placeholder-ul "După" (dreapta)
-        Folosim props pentru culoare și text
-      */}
+
       <div
         className={`absolute inset-0 w-full h-full flex items-center justify-center ${afterPlaceholder.color}`}
         style={{ clipPath: `inset(0 0 0 ${position}%)` }}
@@ -72,7 +67,7 @@ export default function BeforeAfterSlider({ beforePlaceholder, afterPlaceholder 
         </span>
       </div>
 
-      {/* Linia de diviziune (Slider-ul) */}
+
       <div
         className="absolute top-0 bottom-0 w-1.5 bg-white cursor-ew-resize"
         style={{ left: `${position}%`, transform: 'translateX(-50%)' }}

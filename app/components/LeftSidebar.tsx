@@ -39,7 +39,7 @@ export default function LeftSidebar() {
   return (
     <aside className="hidden lg:flex lg:flex-col lg:w-72 xl:w-80 h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 text-gray-300 sticky top-0 border-r border-white/5 shadow-2xl">
       
-      {/* Decorative background elements */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 -left-20 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 -right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl" />
@@ -47,7 +47,7 @@ export default function LeftSidebar() {
 
       <div className="relative flex flex-col h-full p-6">
         
-        {/* Logo Section */}
+
         <motion.div 
           className="mb-10"
           initial={{ opacity: 0, x: -20 }}
@@ -62,7 +62,7 @@ export default function LeftSidebar() {
           </Link>
         </motion.div>
 
-        {/* Navigation */}
+
         <nav className="flex-1 flex flex-col gap-2 mb-8">
           {navigation.map((item, index) => {
             const isActive = pathname === item.href;
@@ -84,7 +84,7 @@ export default function LeftSidebar() {
                     'group relative flex items-center gap-4 rounded-2xl p-4 text-base font-semibold transition-all duration-300 border'
                   )}
                 >
-                  {/* Active indicator */}
+
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
@@ -104,7 +104,7 @@ export default function LeftSidebar() {
                   
                   <span className="flex-1">{item.name}</span>
                   
-                  {/* Arrow indicator on hover */}
+
                   <motion.div
                     className="opacity-0 group-hover:opacity-100 transition-opacity"
                     initial={{ x: -5 }}
@@ -118,7 +118,7 @@ export default function LeftSidebar() {
           })}
         </nav>
 
-        {/* Contact Info Card */}
+
         <motion.div
           className="mb-6 p-5 bg-linear-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 rounded-2xl"
           initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ export default function LeftSidebar() {
           </div>
         </motion.div>
 
-        {/* CTA Button */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export default function LeftSidebar() {
           </Link>
         </motion.div>
 
-        {/* Bottom decorative element */}
+
         <motion.div
           className="mt-4 pt-4 border-t border-white/5 flex items-center justify-center gap-2 text-xs text-gray-500"
           initial={{ opacity: 0 }}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'; // Pictogramă relevantă
+import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'; 
 
-// Datele pentru testimoniale (o listă mai lungă, ar veni dintr-un CMS)
+
 const testimonials = [
   {
     name: "Maria Ionescu",
@@ -43,11 +43,9 @@ const testimonials = [
 
 export default function TestimonialePage() {
   return (
-    // Folosim 'bg-white' pentru pagina de conținut
     <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         
-        {/* Titlul PaginII */}
         <div className="text-center mb-16">
           <ChatBubbleLeftRightIcon className="w-12 h-12 text-sky-600 mx-auto" />
           <h1 className="mt-4 text-4xl font-extrabold text-gray-900 sm:text-5xl">
@@ -58,30 +56,23 @@ export default function TestimonialePage() {
           </p>
         </div>
 
-        {/* Grid-ul cu Testimoniale */}
-        {/* 'lg:grid-cols-3' = 3 coloane pe desktop, 'md:grid-cols-2' = 2 pe tabletă */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {testimonials.map((testimonial) => (
-            // Cardul de testimonial (stil ușor diferit, pe fundal deschis)
             <div key={testimonial.name} className="flex flex-col bg-gray-50 rounded-2xl shadow-lg p-8 border border-gray-100">
               
-              {/* Pictograma Ghilimele */}
               <div>
                 <svg className="w-10 h-10 text-sky-500" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
                   <path d="M9.333 8c-2.2 0-4 1.8-4 4v10.667c0 2.2 1.8 4 4 4h4v-8H9.333V12h4V8H9.333zM22.667 8c-2.2 0-4 1.8-4 4v10.667c0 2.2 1.8 4 4 4h4v-8h-4V12h4V8h-4z" />
                 </svg>
               </div>
               
-              {/* Citatul */}
-              <blockquote className="mt-6 flex-grow text-lg font-medium leading-7 text-gray-700">
+              <blockquote className="mt-6 grow text-lg font-medium leading-7 text-gray-700">
                 <p>"{testimonial.quote}"</p>
               </blockquote>
 
-              {/* Autorul */}
               <footer className="mt-8 flex items-center gap-4">
-                {/* Avatar cu Inițiale */}
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-sky-600 text-white text-lg font-bold">
+                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-sky-600 text-white text-lg font-bold">
                   {testimonial.initials}
                 </div>
                 
