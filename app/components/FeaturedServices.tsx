@@ -136,14 +136,14 @@ export default function FeaturedServices() {
 
   return (
     <motion.section
-      className="relative bg-gradient-to-b from-white via-sky-50/30 to-white py-20 sm:py-28 overflow-hidden"
+      className="relative bg-linear-to-b from-white via-sky-50/30 to-white py-20 sm:py-28 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
       variants={containerVariants}
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-50/50 via-white to-blue-50/50" />
+      <div className="absolute inset-0 bg-linear-to-br from-sky-50/50 via-white to-blue-50/50" />
       
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -222,12 +222,12 @@ export default function FeaturedServices() {
       {/* Decorative lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent"
+          className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-sky-300/30 to-transparent"
           animate={{ x: ['-100%', '100%'] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
-          className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent"
+          className="absolute top-3/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-300/30 to-transparent"
           animate={{ x: ['100%', '-100%'] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
         />
@@ -247,7 +247,7 @@ export default function FeaturedServices() {
             transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
           />
           <motion.div
-            className="absolute top-1/2 right-32 w-12 h-12 bg-gradient-to-br from-purple-300/10 to-pink-300/10 rounded-lg"
+            className="absolute top-1/2 right-32 w-12 h-12 bg-linear-to-br from-purple-300/10 to-pink-300/10 rounded-lg"
             animate={{ 
               y: [0, -20, 0],
               rotate: [0, 90, 0],
@@ -282,7 +282,7 @@ export default function FeaturedServices() {
             className="text-4xl sm:text-5xl font-black text-gray-900 mb-6"
           >
             Tratamente complete pentru{' '}
-            <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
               zâmbetul tău
             </span>
           </motion.h2>
@@ -317,11 +317,11 @@ export default function FeaturedServices() {
                 className="relative flex flex-col h-full p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
               >
                 {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                 
                 {/* Animated border gradient */}
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} ${service.hoverGradient} p-[2px]`}>
+                  <div className={`absolute inset-0 rounded-3xl bg-linear-to-br ${service.gradient} ${service.hoverGradient} p-0.5]`}>
                     <div className="w-full h-full bg-white/80 backdrop-blur-sm rounded-3xl" />
                   </div>
                 </div>
@@ -330,7 +330,7 @@ export default function FeaturedServices() {
                   {/* Icon with gradient background */}
                   <motion.div
                     variants={iconVariants}
-                    className={`inline-flex p-4 bg-gradient-to-br ${service.gradient} rounded-2xl mb-6 shadow-lg`}
+                    className={`inline-flex p-4 bg-linear-to-br ${service.gradient} rounded-2xl mb-6 shadow-lg`}
                   >
                     <service.icon className="w-8 h-8 text-white" />
                   </motion.div>
@@ -340,7 +340,7 @@ export default function FeaturedServices() {
                     {service.title}
                   </h3>
                   
-                  <p className="text-base text-gray-600 leading-relaxed mb-6 flex-grow">
+                  <p className="text-base text-gray-600 leading-relaxed mb-6 grow">
                     {service.description}
                   </p>
 
@@ -358,7 +358,7 @@ export default function FeaturedServices() {
 
                   {/* Decorative elements */}
                   <div className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-full blur-2xl opacity-20`} />
+                    <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} rounded-full blur-2xl opacity-20`} />
                   </div>
                 </div>
               </Link>
@@ -379,7 +379,7 @@ export default function FeaturedServices() {
           </p>
           <Link
             href="/servicii"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-sky-600 to-blue-600 text-white font-semibold rounded-xl hover:from-sky-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-sky-600 to-blue-600 text-white font-semibold rounded-xl hover:from-sky-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Vezi toate serviciile
             <ArrowRight className="w-5 h-5" />

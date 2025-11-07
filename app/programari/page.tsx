@@ -62,7 +62,7 @@ export default function ProgramariPage() {
       : "Data neconfirmată";
       
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50 to-slate-50 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-linear-to-br from-slate-50 via-sky-50 to-slate-50 flex items-center justify-center p-6">
         {/* Decorative background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-20 w-72 h-72 bg-sky-200/30 rounded-full blur-3xl" />
@@ -83,7 +83,7 @@ export default function ProgramariPage() {
             className="flex justify-center mb-8"
           >
             <div className="relative">
-              <div className="w-24 h-24 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/50">
+              <div className="w-24 h-24 bg-linear-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/50">
                 <CheckCircle className="w-12 h-12 text-white" />
               </div>
               <motion.div
@@ -114,7 +114,7 @@ export default function ProgramariPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-6 mb-8 border border-sky-100"
+            className="bg-linear-to-br from-sky-50 to-blue-50 rounded-2xl p-6 mb-8 border border-sky-100"
           >
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
               Detalii Programare
@@ -122,7 +122,7 @@ export default function ProgramariPage() {
             
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-linear-to-br from-sky-400 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -132,7 +132,7 @@ export default function ProgramariPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-linear-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center shrink-0">
                   <Calendar className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -142,7 +142,7 @@ export default function ProgramariPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-linear-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center hrink-0">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export default function ProgramariPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-linear-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -184,7 +184,7 @@ export default function ProgramariPage() {
           >
             <Link
               href="/"
-              className="group flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="group flex items-center justify-center gap-2 w-full px-6 py-4 bg-linear-to-r from-sky-500 to-blue-600 text-white font-bold rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <Home className="w-5 h-5" />
               Înapoi Acasă
@@ -197,7 +197,7 @@ export default function ProgramariPage() {
 
   // Main Form
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50 to-slate-50">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-sky-50 to-slate-50">
       {/* Decorative background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl" />
@@ -223,7 +223,7 @@ export default function ProgramariPage() {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-4">
             Rezervă-ți{' '}
-            <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
               consultația
             </span>
           </h1>

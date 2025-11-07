@@ -50,7 +50,7 @@ export default function MobileHeader() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/30">
+            <div className="w-10 h-10 bg-linear-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/30">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col">
@@ -88,7 +88,7 @@ export default function MobileHeader() {
 
             {/* Menu Panel */}
             <motion.div
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 shadow-2xl lg:hidden overflow-y-auto"
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 shadow-2xl lg:hidden overflow-y-auto"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -109,7 +109,7 @@ export default function MobileHeader() {
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center gap-2"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/50">
+                    <div className="w-10 h-10 bg-linear-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/50">
                       <Sparkles className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex flex-col">
@@ -148,7 +148,7 @@ export default function MobileHeader() {
                           onClick={() => setMobileMenuOpen(false)}
                           className={`group relative flex items-center gap-4 rounded-2xl p-4 text-base font-semibold transition-all duration-300 border ${
                             isActive
-                              ? 'bg-gradient-to-r from-sky-500/20 to-blue-500/20 text-white border-sky-400/50 shadow-lg shadow-sky-500/20'
+                              ? 'bg-linear-to-r from-sky-500/20 to-blue-500/20 text-white border-sky-400/50 shadow-lg shadow-sky-500/20'
                               : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent hover:border-white/10'
                           }`}
                         >
@@ -156,14 +156,14 @@ export default function MobileHeader() {
                           {isActive && (
                             <motion.div
                               layoutId="activeMobileTab"
-                              className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-sky-400 to-blue-600 rounded-r-full"
+                              className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-linear-to-b from-sky-400 to-blue-600 rounded-r-full"
                               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             />
                           )}
                           
                           <div className={`p-2 rounded-xl transition-all duration-300 ${
                             isActive
-                              ? 'bg-gradient-to-br from-sky-400 to-blue-600 text-white'
+                              ? 'bg-linear-to-br from-sky-400 to-blue-600 text-white'
                               : 'bg-white/5 text-gray-400 group-hover:text-white group-hover:bg-white/10'
                           }`}>
                             <Icon className="h-5 w-5" />
@@ -180,13 +180,13 @@ export default function MobileHeader() {
 
                 {/* Contact Info Card */}
                 <motion.div
-                  className="mb-6 p-5 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl"
+                  className="mb-6 p-5 bg-linear-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 rounded-2xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-linear-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
                       <Phone className="w-4 h-4 text-white" />
                     </div>
                     <h3 className="text-white font-bold text-sm">Contact rapid</h3>
@@ -195,7 +195,7 @@ export default function MobileHeader() {
                   <div className="space-y-3">
                     {contactInfo.map((info, index) => (
                       <div key={index} className="flex items-center gap-3 text-sm">
-                        <info.icon className="w-4 h-4 text-sky-400 flex-shrink-0" />
+                        <info.icon className="w-4 h-4 text-sky-400 shrink-0" />
                         {info.href ? (
                           <a 
                             href={info.href} 
@@ -220,13 +220,13 @@ export default function MobileHeader() {
                   <Link
                     href="/programari"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="group relative block w-full px-6 py-4 text-center text-base font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl shadow-lg shadow-sky-500/50 hover:shadow-sky-500/80 transition-all duration-300 overflow-hidden"
+                    className="group relative block w-full px-6 py-4 text-center text-base font-bold text-white bg-linear-to-r from-sky-500 to-blue-600 rounded-2xl shadow-lg shadow-sky-500/50 hover:shadow-sky-500/80 transition-all duration-300 overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <Calendar className="w-5 h-5" />
                       Programează-te Online
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </Link>
                 </motion.div>
 

@@ -72,12 +72,12 @@ export default function Testimonials() {
                 </svg>
               </div>
               
-              <blockquote className="mt-6 flex-grow text-lg font-medium leading-7 text-gray-300">
+              <blockquote className="mt-6 grow text-lg font-medium leading-7 text-gray-300">
                 <p>"{testimonial.quote}"</p>
               </blockquote>
 
               <footer className="mt-8 flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-sky-600 text-white text-lg font-bold">
+                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-sky-600 text-white text-lg font-bold">
                   {testimonial.initials}
                 </div>
                 

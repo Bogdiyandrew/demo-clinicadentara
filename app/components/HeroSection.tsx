@@ -97,7 +97,7 @@ export default function HeroSection() {
       animate="visible"
     >
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-sky-950 to-slate-900">
+      <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-sky-950 to-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.15),transparent_50%)]" />
       </div>
@@ -142,13 +142,13 @@ export default function HeroSection() {
 
             <motion.h1
               variants={childVariants}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black !leading-[1.1] mb-8"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] mb-8"
             >
-              <span className="bg-gradient-to-r from-white via-sky-200 to-white bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-white via-sky-200 to-white bg-clip-text text-transparent">
                 Zâmbetul pe care
               </span>
               <br />
-              <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-sky-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-sky-400 via-blue-500 to-sky-400 bg-clip-text text-transparent">
                 îl meriți
               </span>
             </motion.h1>
@@ -167,10 +167,10 @@ export default function HeroSection() {
             >
               <Link
                 href="/programari"
-                className="group relative w-full sm:w-auto px-10 py-5 text-lg font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl shadow-2xl shadow-sky-500/50 hover:shadow-sky-500/80 transition-all duration-300 hover:scale-105 overflow-hidden"
+                className="group relative w-full sm:w-auto px-10 py-5 text-lg font-bold text-white bg-linear-to-r from-sky-500 to-blue-600 rounded-2xl shadow-2xl shadow-sky-500/50 hover:shadow-sky-500/80 transition-all duration-300 hover:scale-105 overflow-hidden"
               >
                 <span className="relative z-10">Programează-te Online</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               
               <Link
@@ -196,7 +196,7 @@ export default function HeroSection() {
                   className="group relative p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className={`inline-flex p-2 bg-gradient-to-br ${benefit.color} rounded-xl mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex p-2 bg-linear-to-br ${benefit.color} rounded-xl mb-2 group-hover:scale-110 transition-transform duration-300`}>
                     <benefit.icon className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-sm font-semibold text-gray-200">{benefit.text}</p>
@@ -211,8 +211,8 @@ export default function HeroSection() {
             className="relative"
           >
             {/* Decorative elements around image */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/20 to-blue-500/20 rounded-3xl blur-2xl" />
-            <div className="absolute -inset-2 bg-gradient-to-br from-sky-400/10 to-blue-600/10 rounded-3xl" />
+            <div className="absolute -inset-4 bg-linear-to-r from-sky-500/20 to-blue-500/20 rounded-3xl blur-2xl" />
+            <div className="absolute -inset-2 bg-linear-to-br from-sky-400/10 to-blue-600/10 rounded-3xl" />
             
             {/* Main image container */}
             <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl backdrop-blur-sm bg-white/5">
@@ -226,7 +226,7 @@ export default function HeroSection() {
               />
               
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent" />
               
               {/* Floating badge on image */}
               <motion.div
@@ -237,9 +237,9 @@ export default function HeroSection() {
               >
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-blue-500 border-2 border-white/20" />
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 border-2 border-white/20" />
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 border-2 border-white/20" />
+                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-sky-400 to-blue-500 border-2 border-white/20" />
+                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-purple-400 to-pink-500 border-2 border-white/20" />
+                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-emerald-400 to-teal-500 border-2 border-white/20" />
                   </div>
                   <div>
                     <p className="text-white font-bold text-sm">520+ Pacienți Fericiți</p>
@@ -253,7 +253,7 @@ export default function HeroSection() {
             {isMounted && (
               <>
                 <motion.div
-                  className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-sky-400/20 to-blue-500/20 rounded-full blur-xl"
+                  className="absolute -top-6 -right-6 w-20 h-20 bg-linear-to-br from-sky-400/20 to-blue-500/20 rounded-full blur-xl"
                   animate={{ 
                     scale: [1, 1.2, 1],
                     rotate: [0, 90, 0],
@@ -261,7 +261,7 @@ export default function HeroSection() {
                   transition={{ duration: 8, repeat: Infinity }}
                 />
                 <motion.div
-                  className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-xl"
+                  className="absolute -bottom-6 -left-6 w-24 h-24 bg-linear-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-xl"
                   animate={{ 
                     scale: [1, 1.3, 1],
                     rotate: [0, -90, 0],
@@ -288,7 +288,7 @@ export default function HeroSection() {
               className="group relative p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className={`inline-flex p-3 bg-gradient-to-br ${benefit.color} rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`inline-flex p-3 bg-linear-to-br ${benefit.color} rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300`}>
                 <benefit.icon className="w-6 h-6 text-white" />
               </div>
               <p className="text-base font-semibold text-gray-200">{benefit.text}</p>
