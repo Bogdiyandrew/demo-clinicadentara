@@ -34,7 +34,7 @@ export default function ContactPage() {
                   <PhoneIcon className="shrink-0 w-6 h-6 text-sky-600 mt-1" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900">Telefon Programări</h3>
-                    <a href="tel:0700123456" className="text-lg text-gray-700 hover:text-sky-600">0700 123 456</a>
+                    <a href="tel:0740123456" className="text-lg text-gray-700 hover:text-sky-600">0740 123 456</a>
                   </div>
                 </div>
                 <div className="flex items-start">
