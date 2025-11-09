@@ -89,7 +89,7 @@ export default function FinalCTA() {
           
           <Link
             href="/contact"
-            className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-white bg-white/5 backdrop-blur-sm border-2 border-white/20 rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-sky-500 bg-white/20 backdrop-blur-sm border-2 border-white/20 rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105"
           >
             Sună-ne acum
           </Link>
