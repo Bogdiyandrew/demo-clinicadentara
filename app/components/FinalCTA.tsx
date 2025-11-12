@@ -77,7 +77,8 @@ export default function FinalCTA() {
         >
           <Link
             href="/programari"
-            className="group relative w-full sm:w-auto px-10 py-5 text-lg font-bold text-slate-900 bg-white rounded-2xl shadow-2xl shadow-white/20 hover:shadow-white/40 transition-all duration-300 hover:scale-105 overflow-hidden"
+            className="group relative w-full sm:w-auto px-10 py-5 text-lg font-semibold text-white bg-blue-600 rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-500/50 transition-all duration-300 ease-out"
+
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               <Calendar className="w-5 h-5" />
@@ -89,7 +90,8 @@ export default function FinalCTA() {
           
           <Link
             href="/contact"
-            className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-sky-500 bg-white/20 backdrop-blur-sm border-2 border-white/20 rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto px-10 py-5 text-lg font-semibold text-sky-600 bg-white rounded-xl border border-sky-100 shadow-[0_4px_20px_-2px_rgba(56,189,248,0.3)] hover:shadow-[0_6px_25px_-2px_rgba(56,189,248,0.45)] hover:bg-sky-50 hover:border-sky-200 transition-all duration-300 ease-out"
+
           >
             Sună-ne acum
           </Link>
