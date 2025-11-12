@@ -48,10 +48,10 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl font-black text-sky-500 mb-6 leading-tight"
         >
           Ești pregătit să-ți transformi{' '}
-          <span className="bg-liniar-to-r from-sky-400 via-blue-500 to-sky-400 bg-clip-text text-transparent">
+          <span className="bg-liniar-to-r from-sky-400 via-blue-500 to-sky-400 bg-clip-text text-gray-500">
             zâmbetul?
           </span>
         </motion.h2>
@@ -62,7 +62,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-6 text-lg sm:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto"
+          className="mt-6 text-lg sm:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto"
         >
           Nu mai amâna. Programează o consultație astăzi și descoperă planul de tratament personalizat pentru tine.
         </motion.p>
