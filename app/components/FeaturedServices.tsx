@@ -8,59 +8,72 @@ import {
   Award, 
   Smile, 
   Stethoscope,
-  Heart,
+  HeartPulse,
   Zap,
-  ArrowRight
+  ArrowRight,
+  Activity
 } from 'lucide-react';
 
 const services = [
   {
     title: 'Implanturi Dentare',
-    description: 'Soluții moderne și durabile pentru înlocuirea dinților lipsă cu tehnologie avansată.',
+    description: 'Restaurare completă a funcționalității cu implanturi din titan de ultimă generație.',
     href: '/servicii/implant-dentar',
     icon: Stethoscope,
-    gradient: 'from-blue-500 to-cyan-500',
-    hoverGradient: 'group-hover:from-blue-600 group-hover:to-cyan-600',
+    color: 'text-blue-500',
+    bg: 'bg-blue-500/10',
+    glow: 'group-hover:shadow-blue-500/20',
+    border: 'group-hover:border-blue-500/30'
   },
   {
     title: 'Estetică Dentară',
-    description: 'Albire profesională, fațete dentare și coroane pentru un zâmbet de vis.',
+    description: 'Design personalizat al zâmbetului prin fațete ceramice și albire laser.',
     href: '/servicii/estetica-dentara',
     icon: Sparkles,
-    gradient: 'from-purple-500 to-pink-500',
-    hoverGradient: 'group-hover:from-purple-600 group-hover:to-pink-600',
+    color: 'text-purple-500',
+    bg: 'bg-purple-500/10',
+    glow: 'group-hover:shadow-purple-500/20',
+    border: 'group-hover:border-purple-500/30'
   },
   {
-    title: 'Ortodonție',
-    description: 'Corectarea poziției dinților cu aparate moderne și invizibile.',
+    title: 'Ortodonție Digitală',
+    description: 'Alinierea dinților folosind alignere invizibile și scanare intraorală 3D.',
     href: '/servicii/ortodontie',
     icon: Smile,
-    gradient: 'from-emerald-500 to-teal-500',
-    hoverGradient: 'group-hover:from-emerald-600 group-hover:to-teal-600',
+    color: 'text-emerald-500',
+    bg: 'bg-emerald-500/10',
+    glow: 'group-hover:shadow-emerald-500/20',
+    border: 'group-hover:border-emerald-500/30'
   },
   {
-    title: 'Tratamente Preventive',
-    description: 'Igienizări profesionale și consulturi pentru menținerea sănătății dentare.',
+    title: 'Profilaxie & Igienă',
+    description: 'Menține sănătatea orală prin detartraj cu ultrasunete și airflow.',
     href: '/servicii/preventie',
     icon: Award,
-    gradient: 'from-orange-500 to-red-500',
-    hoverGradient: 'group-hover:from-orange-600 group-hover:to-red-600',
+    color: 'text-orange-500',
+    bg: 'bg-orange-500/10',
+    glow: 'group-hover:shadow-orange-500/20',
+    border: 'group-hover:border-orange-500/30'
   },
   {
-    title: 'Stomatologie Generală',
-    description: 'Tratamente complete pentru carii, obturații și problemele dentare comune.',
+    title: 'Endodonție',
+    description: 'Tratamente de canal asistate de microscop pentru salvarea dinților naturali.',
     href: '/servicii/stomatologie',
-    icon: Heart,
-    gradient: 'from-rose-500 to-pink-500',
-    hoverGradient: 'group-hover:from-rose-600 group-hover:to-pink-600',
+    icon: Activity,
+    color: 'text-rose-500',
+    bg: 'bg-rose-500/10',
+    glow: 'group-hover:shadow-rose-500/20',
+    border: 'group-hover:border-rose-500/30'
   },
   {
-    title: 'Urgențe Dentare',
-    description: 'Asistență rapidă pentru dureri și probleme dentare care necesită tratament imediat.',
+    title: 'Urgențe Non-Stop',
+    description: 'Preluare prioritară a cazurilor acute și tratament imediat al durerii.',
     href: '/servicii/urgente',
     icon: Zap,
-    gradient: 'from-yellow-500 to-orange-500',
-    hoverGradient: 'group-hover:from-yellow-600 group-hover:to-orange-600',
+    color: 'text-amber-500',
+    bg: 'bg-amber-500/10',
+    glow: 'group-hover:shadow-amber-500/20',
+    border: 'group-hover:border-amber-500/30'
   },
 ];
 
@@ -69,8 +82,8 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
@@ -78,7 +91,7 @@ const containerVariants: Variants = {
 const cardVariants: Variants = {
   hidden: { 
     opacity: 0, 
-    y: 50,
+    y: 30,
     scale: 0.95,
   },
   visible: {
@@ -88,44 +101,10 @@ const cardVariants: Variants = {
     transition: {
       type: 'spring' as const,
       stiffness: 100,
-      damping: 15,
+      damping: 20,
     },
   },
 };
-
-const iconVariants: Variants = {
-  rest: { scale: 1, rotate: 0 },
-  hover: { 
-    scale: 1.1, 
-    rotate: 5,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 400,
-      damping: 10,
-    },
-  },
-};
-
-
-const floatingShapes = [
-  { size: 400, left: 10, top: 15, color: 'bg-sky-300/10', delay: 0 },
-  { size: 300, left: 75, top: 10, color: 'bg-blue-400/10', delay: 2 },
-  { size: 350, left: 50, top: 60, color: 'bg-purple-300/10', delay: 4 },
-  { size: 250, left: 85, top: 70, color: 'bg-cyan-300/10', delay: 1 },
-  { size: 200, left: 20, top: 75, color: 'bg-indigo-300/10', delay: 3 },
-];
-
-
-const smallParticles = [
-  { left: 15, top: 25, size: 8, color: 'bg-sky-400/40' },
-  { left: 30, top: 45, size: 6, color: 'bg-blue-400/30' },
-  { left: 65, top: 30, size: 10, color: 'bg-purple-400/40' },
-  { left: 80, top: 55, size: 7, color: 'bg-cyan-400/35' },
-  { left: 45, top: 70, size: 9, color: 'bg-indigo-400/30' },
-  { left: 90, top: 20, size: 6, color: 'bg-pink-400/40' },
-  { left: 10, top: 60, size: 8, color: 'bg-teal-400/35' },
-  { left: 55, top: 15, size: 7, color: 'bg-sky-400/30' },
-];
 
 export default function FeaturedServices() {
   const [isMounted, setIsMounted] = useState(false);
@@ -135,142 +114,34 @@ export default function FeaturedServices() {
   }, []);
 
   return (
-    <motion.section
-      className="relative bg-linear-to-b from-white via-sky-50/30 to-white py-20 sm:py-28 overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      variants={containerVariants}
-    >
-
-      <div className="absolute inset-0 bg-linear-to-br from-sky-50/50 via-white to-blue-50/50" />
+    <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50">
       
-
-      <div className="absolute inset-0 opacity-[0.015]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(to right, rgb(14, 165, 233) 1px, transparent 1px),
-            linear-gradient(to bottom, rgb(14, 165, 233) 1px, transparent 1px)
-          `,
-          backgroundSize: '64px 64px'
-        }} />
-      </div>
-
-
-      {isMounted && (
-        <div className="absolute inset-0 pointer-events-none">
-          {floatingShapes.map((shape, index) => (
-            <motion.div
-              key={index}
-              className={`absolute ${shape.color} rounded-full blur-3xl`}
-              style={{
-                width: shape.size,
-                height: shape.size,
-                left: `${shape.left}%`,
-                top: `${shape.top}%`,
-                transform: 'translate(-50%, -50%)',
-              }}
-              animate={{
-                y: [0, -30, 0],
-                x: [0, 20, 0],
-                scale: [1, 1.1, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                duration: 8 + index,
-                repeat: Infinity,
-                delay: shape.delay,
-                ease: 'easeInOut',
-              }}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Radial gradient spots */}
+      {/* --- Background Elements --- */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-radial from-sky-200/20 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-gradient-radial from-blue-200/20 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-purple-200/10 via-transparent to-transparent rounded-full blur-3xl" />
-      </div>
-
-
-      {isMounted && smallParticles.map((particle, index) => (
-        <motion.div
-          key={index}
-          className={`absolute ${particle.color} rounded-full`}
-          style={{
-            width: particle.size,
-            height: particle.size,
-            left: `${particle.left}%`,
-            top: `${particle.top}%`,
-          }}
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.4, 0.8, 0.4],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 4 + (index % 3),
-            repeat: Infinity,
-            delay: index * 0.3,
-            ease: 'easeInOut',
-          }}
-        />
-      ))}
-
-      {/* Decorative lines */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-sky-300/30 to-transparent"
-          animate={{ x: ['-100%', '100%'] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-          className="absolute top-3/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-300/30 to-transparent"
-          animate={{ x: ['100%', '-100%'] }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
-
-
-      {isMounted && (
-        <>
-          <motion.div
-            className="absolute top-20 right-20 w-20 h-20 border-2 border-sky-300/20 rounded-lg"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          />
-          <motion.div
-            className="absolute bottom-32 left-16 w-16 h-16 border-2 border-blue-300/20 rounded-full"
-            animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.div
-            className="absolute top-1/2 right-32 w-12 h-12 bg-linear-to-br from-purple-300/10 to-pink-300/10 rounded-lg"
-            animate={{ 
-              y: [0, -20, 0],
-              rotate: [0, 90, 0],
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        </>
-      )}
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Mesh Gradients */}
+        <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-radial-gradient from-sky-100/60 to-transparent blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-radial-gradient from-blue-100/60 to-transparent blur-3xl translate-x-1/3 translate-y-1/3" />
         
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.4] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      </div>
 
-        <div className="max-w-3xl mx-auto text-center mb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        
+        {/* --- Header --- */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-sky-100/80 backdrop-blur-sm border border-sky-200 rounded-full mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8"
           >
-            <Sparkles className="w-4 h-4 text-sky-600" />
-            <span className="text-sm font-semibold text-sky-700 uppercase tracking-wider">
-              Serviciile Noastre
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+            </span>
+            <span className="text-sm font-semibold text-slate-600 uppercase tracking-wider">
+              Excelență în stomatologie
             </span>
           </motion.div>
 
@@ -278,114 +149,99 @@ export default function FeaturedServices() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-gray-900 mb-6"
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight"
           >
-            Tratamente complete pentru{' '}
-            <span className="bg-linear-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
-              zâmbetul tău
-            </span>
+            Soluții medicale <br className="hidden sm:block" />
+            pentru un <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-blue-600">zâmbet sănătos</span>
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-gray-600 leading-relaxed"
+            transition={{ delay: 0.2 }}
+            className="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto"
           >
-            Oferim o gamă largă de servicii stomatologice, de la prevenție la intervenții complexe, 
-            folosind cea mai nouă tehnologie și tehnici moderne.
+            Tehnologie avansată și o echipă de specialiști dedicați pentru a oferi tratamente durabile, fără durere și rezultate estetice superioare.
           </motion.p>
         </div>
 
-
+        {/* --- Services Grid --- */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
         >
-          {services.map((service) => (
+          {services.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={index}
               variants={cardVariants}
-              whileHover="hover"
-              initial="rest"
-              className="group"
+              className="group relative h-full"
             >
               <Link
                 href={service.href}
-                className="relative flex flex-col h-full p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
+                className={`
+                  relative flex flex-col h-full p-8 rounded-3xl 
+                  bg-white border border-slate-100 
+                  transition-all duration-500 ease-out
+                  hover:-translate-y-2 hover:shadow-2xl
+                  ${service.glow} ${service.border}
+                `}
               >
+                {/* Icon with pulsing background */}
+                <div className="mb-6 relative">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors duration-500 ${service.bg} group-hover:scale-110 duration-500`}>
+                    <service.icon className={`w-7 h-7 transition-colors duration-300 ${service.color}`} />
+                  </div>
+                </div>
 
-                <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">
+                  {service.title}
+                </h3>
                 
+                <p className="text-slate-500 text-base leading-relaxed mb-8 flex-grow">
+                  {service.description}
+                </p>
 
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className={`absolute inset-0 rounded-3xl bg-linear-to-br ${service.gradient} ${service.hoverGradient} p-0.5]`}>
-                    <div className="w-full h-full bg-white/80 backdrop-blur-sm rounded-3xl" />
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
+                  <span className="text-sm font-semibold text-slate-400 group-hover:text-slate-600 transition-colors">
+                    Detalii procedură
+                  </span>
+                  <div className={`p-2 rounded-full ${service.bg} opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300`}>
+                    <ArrowRight className={`w-4 h-4 ${service.color}`} />
                   </div>
                 </div>
 
-                <div className="relative z-10">
-
-                  <motion.div
-                    variants={iconVariants}
-                    className={`inline-flex p-4 bg-linear-to-br ${service.gradient} rounded-2xl mb-6 shadow-lg`}
-                  >
-                    <service.icon className="w-8 h-8 text-white" />
-                  </motion.div>
-
-
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-sky-700 transition-colors duration-300 mb-3">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-base text-gray-600 leading-relaxed mb-6 grow">
-                    {service.description}
-                  </p>
-
-
-                  <div className="flex items-center gap-2 text-sky-600 font-semibold group-hover:gap-4 transition-all duration-300">
-                    <span>Află mai mult</span>
-                    <motion.div
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 5 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.div>
-                  </div>
-
-
-                  <div className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} rounded-full blur-2xl opacity-20`} />
-                  </div>
-                </div>
+                {/* Decorative blurred gradient inside card on hover */}
+                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-white via-transparent to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500`} />
               </Link>
             </motion.div>
           ))}
         </motion.div>
 
-
+        {/* --- Bottom CTA --- */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0.4 }}
+          className="mt-20 text-center"
         >
-          <p className="text-lg text-gray-600 mb-6">
-            Nu găsești ceea ce cauți?
-          </p>
           <Link
             href="/servicii"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-sky-600 to-blue-600 text-white font-semibold rounded-xl hover:from-sky-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-semibold hover:bg-slate-800 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/20 hover:-translate-y-1"
           >
-            Vezi toate serviciile
-            <ArrowRight className="w-5 h-5" />
+            <span>Vezi toate tratamentele</span>
+            <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+              <ArrowRight className="w-3 h-3" />
+            </div>
           </Link>
         </motion.div>
+
       </div>
-    </motion.section>
+    </section>
   );
 }
