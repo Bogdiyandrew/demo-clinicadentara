@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 export interface ServiceStep {
   title: string;
   description: string;
@@ -194,3 +196,54 @@ export const serviceDatabase: Record<string, Service> = {
     ]
   }
 };
+
+export function generateStaticParams() {
+  return Object.keys(serviceDatabase).map((slug) => ({
+    slug,
+  }));
+}
+
+export default function ServicePage({ params }: { params: { slug: string } }) {
+  const service = serviceDatabase[params.slug];
+
+  if (!service) {
+    notFound();
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold mb-6">{service.title}</h1>
+      <div className="prose max-w-none mb-12">
+        <p className="text-xl text-gray-600 whitespace-pre-line">{service.longDesc}</p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 className="text-2xl font-semibold mb-6">Etapele Tratamentului</h2>
+          <div className="space-y-6">
+            {service.steps.map((step, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-bold text-lg mb-2">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-semibold mb-6">Beneficii</h2>
+          <div className="bg-gray-50 p-8 rounded-2xl">
+            <ul className="space-y-4">
+              {service.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-blue-600 shrink-0" />
+                  <span className="text-gray-700">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
