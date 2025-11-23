@@ -58,8 +58,14 @@ export default function BeforeAfterGallery() {
           className="mt-12 rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border border-slate-100 dark:border-slate-800"
         >
           <BeforeAfterSlider
-            beforePlaceholder={{ color: 'bg-gradient-to-br from-slate-300 to-slate-400', label: 'ÎNAINTE' }}
-            afterPlaceholder={{ color: 'bg-gradient-to-br from-primary to-cyan-600', label: 'DUPĂ' }}
+            beforePlaceholder={{
+              image: '/images/before-teeth.png',
+              label: 'ÎNAINTE'
+            }}
+            afterPlaceholder={{
+              image: '/images/after-teeth.png',
+              label: 'DUPĂ'
+            }}
           />
         </motion.div>
 

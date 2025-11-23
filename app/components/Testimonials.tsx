@@ -4,11 +4,20 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
-const testimonials = [
+interface Testimonial {
+  name: string;
+  role: string;
+  initials: string;
+  quote: string;
+  image?: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     name: "Maria Ionescu",
     role: "Pacientă Estetică Dentară",
     initials: "MI",
+    image: "/images/testimonial-1.png",
     quote: "Echipa a fost incredibil de profesionistă și atentă. Mi-au explicat fiecare pas, iar rezultatul... zâmbetul meu este complet transformat. Recomand 100%!"
   },
   {
@@ -109,8 +118,18 @@ export default function Testimonials() {
               </blockquote>
 
               <div className="mt-8 flex items-center gap-4 pt-6 border-t border-slate-700/50">
-                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-cyan-600 text-white text-sm font-bold shadow-lg shadow-primary/20">
-                  {testimonial.initials}
+                <div className="shrink-0 relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-primary to-cyan-600 shadow-lg shadow-primary/20">
+                  {testimonial.image ? (
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-white text-sm font-bold">
+                      {testimonial.initials}
+                    </div>
+                  )}
                 </div>
 
                 <div className="text-left">
