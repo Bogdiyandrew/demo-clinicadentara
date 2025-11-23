@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { ArrowLeft, CheckCircle2, Clock, ShieldCheck, Sparkles } from 'lucide-react';
 
 export interface ServiceStep {
   title: string;
@@ -203,45 +205,127 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
-  const service = serviceDatabase[params.slug];
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const service = serviceDatabase[resolvedParams.slug];
 
   if (!service) {
     notFound();
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-6">{service.title}</h1>
-      <div className="prose max-w-none mb-12">
-        <p className="text-xl text-gray-600 whitespace-pre-line">{service.longDesc}</p>
-      </div>
-      
-      <div className="grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">Etapele Tratamentului</h2>
-          <div className="space-y-6">
-            {service.steps.map((step, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h3 className="font-bold text-lg mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+      {/* Hero Section */}
+      <div className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.05]" />
         </div>
 
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">Beneficii</h2>
-          <div className="bg-gray-50 p-8 rounded-2xl">
-            <ul className="space-y-4">
-              {service.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-blue-600 shrink-0" />
-                  <span className="text-gray-700">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <Link
+            href="/servicii"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            Înapoi la Servicii
+          </Link>
+
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm mb-6">
+              <Sparkles className="w-4 h-4 text-secondary" />
+              <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">
+                Tratament Premium
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight">
+              {service.title}
+            </h1>
+            <p className="text-xl text-slate-300 leading-relaxed font-light">
+              {service.shortDesc}
+            </p>
           </div>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
+
+          {/* Main Content */}
+          <div className="lg:col-span-2">
+            <div className="prose prose-lg prose-slate dark:prose-invert max-w-none mb-16">
+              <p className="text-slate-600 dark:text-slate-300 whitespace-pre-line leading-relaxed">
+                {service.longDesc}
+              </p>
+            </div>
+
+            <h2 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-primary" />
+              </div>
+              Etapele Tratamentului
+            </h2>
+
+            <div className="space-y-6">
+              {service.steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+                >
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm font-bold text-primary border border-slate-200 dark:border-slate-700 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sidebar / Benefits */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-32">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-black/20">
+                <h2 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-secondary" />
+                  Beneficii Principale
+                </h2>
+                <ul className="space-y-4">
+                  {service.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span className="text-slate-600 dark:text-slate-300 text-sm font-medium leading-relaxed">
+                        {benefit}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
+                  <Link
+                    href="/contact"
+                    className="block w-full py-4 px-6 bg-primary hover:bg-primary/90 text-white text-center font-bold rounded-xl transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1"
+                  >
+                    Programează o Consultație
+                  </Link>
+                  <p className="mt-4 text-center text-xs text-slate-400">
+                    Prima consultație include planul de tratament.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

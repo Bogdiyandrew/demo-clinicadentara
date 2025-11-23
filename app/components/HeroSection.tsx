@@ -4,33 +4,33 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
-import { ShieldCheck, Star, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Star, ArrowRight, PlayCircle } from 'lucide-react';
 
-// FIX 1: Adăugat 'as const' pentru ca TypeScript să știe că e un array fix (Bezier Curve)
 const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: (custom: number) => ({
     opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.6, 
-      delay: custom * 0.1, 
-      ease: [0.22, 1, 0.36, 1] as const 
+    transition: {
+      duration: 0.8,
+      delay: custom * 0.15,
+      ease: [0.22, 1, 0.36, 1] as const
     }
   })
 };
 
 const stats = [
-  { label: 'Pacienți', value: '15k+' },
-  { label: 'Ani Experiență', value: '15+' },
-  { label: 'Specialiști', value: '8' },
+  { label: 'Pacienți Fericiți', value: '15k+' },
+  { label: 'Ani de Excelență', value: '15+' },
+  { label: 'Medici Specialiști', value: '8' },
 ];
 
 export default function HeroSection() {
   const [isMounted, setIsMounted] = useState(false);
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -100]);
+  const y1 = useTransform(scrollY, [0, 500], [0, 100]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -39,33 +39,35 @@ export default function HeroSection() {
   if (!isMounted) return null;
 
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-slate-950">
-      
+    <section className="relative w-full min-h-[95vh] flex items-center overflow-hidden bg-slate-50 dark:bg-slate-950">
+
       {/* --- Background Ambient Layer --- */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[120px] animate-pulse duration-[4s]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] rounded-full bg-sky-500/20 blur-[100px]" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[60%] h-[60%] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[100px]" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.03] dark:opacity-[0.05]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-10 pb-20 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-          
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20 pb-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+
           {/* --- Left Content --- */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+
             <motion.div
               custom={0}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-700/50 backdrop-blur-md mb-8 shadow-lg shadow-sky-900/20"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 backdrop-blur-sm mb-8 shadow-sm"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
               </span>
-              <span className="text-sm font-medium text-sky-200">Acceptăm pacienți noi</span>
+              <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 tracking-wide uppercase text-[11px]">
+                Acceptăm pacienți noi
+              </span>
             </motion.div>
 
             <motion.h1
@@ -73,11 +75,10 @@ export default function HeroSection() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold font-heading tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1]"
             >
               Zâmbetul tău, <br />
-              {/* FIX 2: bg-gradient-to-r -> bg-linear-to-r */}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-400 via-blue-400 to-sky-300 animate-gradient-x">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-primary bg-[length:200%_auto] animate-gradient-x">
                 Prioritatea noastră.
               </span>
             </motion.h1>
@@ -87,9 +88,10 @@ export default function HeroSection() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-lg text-slate-400 mb-10 max-w-xl leading-relaxed"
+              className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed font-light"
             >
-              Tehnologie de ultimă generație și o echipă empatică, pregătită să îți ofere tratamentul dentar pe care îl meriți. Fără durere, doar rezultate.
+              Experimentează stomatologia modernă într-un mediu relaxant.
+              Tehnologie de vârf, medici empatici și rezultate care îți vor reda încrederea.
             </motion.p>
 
             <motion.div
@@ -100,105 +102,105 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
               <Link
-                href="/programari"
-                className="group relative px-8 py-4 bg-sky-500 hover:bg-sky-400 text-white rounded-2xl font-bold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(14,165,233,0.5)] hover:shadow-[0_0_60px_-15px_rgba(14,165,233,0.6)] hover:-translate-y-1 overflow-hidden"
+                href="/contact"
+                className="group relative px-8 py-4 bg-primary text-white rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2"
               >
-                {/* FIX 2: bg-gradient-to-r -> bg-linear-to-r */}
-                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out" />
-                <span className="relative flex items-center justify-center gap-2">
-                  Programează-te
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
+                <span className="relative z-10">Programează-te</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               </Link>
-              
+
               <Link
                 href="/servicii"
-                className="px-8 py-4 bg-transparent border border-slate-700 text-white hover:bg-slate-800 hover:border-slate-600 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
+                <PlayCircle className="w-5 h-5 text-secondary" />
                 Vezi Servicii
               </Link>
             </motion.div>
 
-            {/* Mini Trust Indicators */}
-            <motion.div 
+            {/* Trust Stats */}
+            <motion.div
               custom={4}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="mt-12 pt-8 border-t border-slate-800/60 grid grid-cols-3 gap-8 w-full"
+              className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 w-full grid grid-cols-3 gap-4 sm:gap-8"
             >
               {stats.map((stat, i) => (
-                <div key={i}>
-                  <p className="text-2xl lg:text-3xl font-bold text-white">{stat.value}</p>
-                  <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">{stat.label}</p>
+                <div key={i} className="text-center sm:text-left">
+                  <p className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-1">{stat.value}</p>
+                  <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider font-semibold">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
           </div>
 
           {/* --- Right Visual Content --- */}
-          <div className="relative lg:h-[600px] flex items-center justify-center perspective-1000">
-             {/* Circle Background - FIX 2: bg-gradient-to-br -> bg-linear-to-br */}
-             <motion.div 
-               style={{ y: y2 }}
-               className="absolute w-[500px] h-[500px] bg-linear-to-br from-slate-800/50 to-slate-900/50 rounded-full border border-slate-700/30 backdrop-blur-3xl -z-10"
-             />
+          <div className="relative lg:h-[700px] flex items-center justify-center perspective-1000 hidden lg:flex">
+            {/* Abstract Background Shapes */}
+            <motion.div
+              style={{ y: y2, opacity }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10"
+            />
 
             {/* Main Image Container */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotateY: -20 }}
+              initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 0.8, type: "spring" }}
-              className="relative w-full max-w-md mx-auto"
+              transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 50 }}
+              className="relative w-full max-w-lg mx-auto"
             >
-              {/* FIX 3: rounded-[2rem] -> rounded-4xl */}
-              <div className="relative rounded-4xl overflow-hidden shadow-2xl border-8 border-slate-900/50">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border-[8px] border-white dark:border-slate-800 bg-white dark:bg-slate-900">
                 <Image
-                  src="/herosection.png" 
-                  alt="Clinica Dentara"
+                  src="/herosection.png"
+                  alt="Clinica Dentara Modernă"
                   width={600}
                   height={800}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000"
                   priority
                 />
-                
-                {/* Overlay Gradient bottom - FIX 2: bg-gradient-to-t -> bg-linear-to-t */}
-                <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-transparent to-transparent" />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
               </div>
 
-              {/* Floating Elements (Cards) */}
+              {/* Floating Cards */}
               <motion.div
                 style={{ y: y1 }}
-                className="absolute -right-8 top-12 bg-slate-900/80 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-xl max-w-[180px]"
+                className="absolute -right-12 top-24 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-[200px]"
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-green-500/20 rounded-lg">
-                    <ShieldCheck className="w-5 h-5 text-green-400" />
+                  <div className="p-2 bg-emerald-100 dark:bg-emerald-500/20 rounded-lg">
+                    <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
-                  <span className="text-sm font-bold text-white">Garanție</span>
+                  <span className="text-sm font-bold text-slate-900 dark:text-white">Garanție Extinsă</span>
                 </div>
-                <p className="text-xs text-slate-300">Toate lucrările beneficiază de garanție extinsă.</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-tight">
+                  Tratamente sigure și durabile pentru zâmbetul tău.
+                </p>
               </motion.div>
 
               <motion.div
-                className="absolute -left-8 bottom-20 bg-white p-4 rounded-2xl shadow-xl max-w-[200px]"
+                className="absolute -left-12 bottom-32 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-[220px]"
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="flex text-yellow-400">
-                    {[1,2,3,4,5].map(s => <Star key={s} className="w-3 h-3 fill-current" />)}
-                  </div>
-                  <span className="text-xs font-bold text-slate-900">5.0</span>
+                <div className="flex items-center gap-1 mb-2">
+                  {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
                 </div>
-                <p className="text-xs font-medium text-slate-600">"Cea mai bună experiență la dentist!"</p>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="w-6 h-6 rounded-full bg-slate-200" />
-                  <span className="text-[10px] text-slate-500">Maria P. - Pacient</span>
+                <p className="text-xs font-medium text-slate-700 dark:text-slate-300 italic mb-3">
+                  "Profesionalism și grijă deosebită. Recomand cu încredere!"
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-[10px] text-white font-bold">
+                    MP
+                  </div>
+                  <span className="text-[10px] text-slate-500 font-semibold uppercase tracking-wide">Maria P. - Pacient</span>
                 </div>
               </motion.div>
 

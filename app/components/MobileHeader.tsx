@@ -8,29 +8,24 @@ import {
   Menu,
   X,
   Home,
-  Briefcase,
-  MessageSquare,
-  Mail,
+  Users,
   Sparkles,
-  DollarSign,
-  Calendar,
+  Image as ImageIcon,
   Phone,
-  Clock,
+  Calendar,
   ChevronRight
 } from 'lucide-react';
 
 const navigation = [
   { name: 'Acasă', href: '/', icon: Home },
-  { name: 'Servicii', href: '/servicii', icon: Briefcase },
-  { name: 'Testimoniale', href: '/testimoniale', icon: MessageSquare },
-  { name: 'Prețuri', href: '/preturi', icon: DollarSign },
-  { name: 'Galerie', href: '/galerie', icon: Sparkles },
-  { name: 'Contact', href: '/contact', icon: Mail },
+  { name: 'Servicii', href: '/servicii', icon: Sparkles },
+  { name: 'Echipa', href: '/echipa', icon: Users },
+  { name: 'Galerie', href: '/galerie', icon: ImageIcon },
+  { name: 'Contact', href: '/contact', icon: Phone },
 ];
 
 const contactInfo = [
   { icon: Phone, text: '0740 123 456', href: 'tel:0740123456' },
-  { icon: Clock, text: 'Lun-Vin: 9:00-18:00', href: null },
 ];
 
 export default function MobileHeader() {
@@ -39,32 +34,28 @@ export default function MobileHeader() {
 
   return (
     <>
-
-      <motion.header 
-        className="lg:hidden sticky top-0 z-40 bg-slate-950/95 backdrop-blur-md border-b border-white/5 shadow-xl"
+      <motion.header
+        className="lg:hidden sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex items-center justify-between px-4 py-4">
-          
-
+        <div className="flex items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-linear-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/30">
+            <div className="w-9 h-9 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-white text-lg font-black leading-none">
-                Clinic<span className="text-sky-400">Demo</span>
+              <span className="text-slate-900 text-lg font-bold font-heading leading-none">
+                Clinic<span className="text-primary">Demo</span>
               </span>
-              <span className="text-[10px] text-gray-400 font-medium">Zâmbetul perfect</span>
+              <span className="text-[10px] text-slate-500 font-medium tracking-wider uppercase">Dental Care</span>
             </div>
           </Link>
 
-
           <motion.button
             type="button"
-            className="relative p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+            className="relative p-2 rounded-lg bg-slate-100 text-slate-600 hover:text-primary hover:bg-primary/5 transition-all"
             onClick={() => setMobileMenuOpen(true)}
             whileTap={{ scale: 0.95 }}
           >
@@ -73,13 +64,11 @@ export default function MobileHeader() {
         </div>
       </motion.header>
 
-
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-
             <motion.div
-              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-50 bg-slate-900/20 backdrop-blur-sm lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -88,158 +77,73 @@ export default function MobileHeader() {
 
             {/* Menu Panel */}
             <motion.div
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 shadow-2xl lg:hidden overflow-y-auto"
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-2xl lg:hidden overflow-y-auto border-l border-slate-100"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             >
-
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 -right-20 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-20 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl" />
-              </div>
-
-              <div className="relative h-full flex flex-col p-6">
-                
-
-                <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
-                  <Link 
-                    href="/" 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2"
-                  >
-                    <div className="w-10 h-10 bg-linear-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/50">
-                      <Sparkles className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-white text-lg font-black leading-none">
-                        Clinic<span className="text-sky-400">Demo</span>
-                      </span>
-                      <span className="text-xs text-gray-400 font-medium">Zâmbetul perfect</span>
-                    </div>
-                  </Link>
-                  
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between p-4 border-b border-slate-100">
+                  <span className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Meniu</span>
                   <motion.button
                     type="button"
-                    className="p-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                    className="p-2 rounded-lg bg-slate-50 text-slate-400 hover:text-slate-900 transition-all"
                     onClick={() => setMobileMenuOpen(false)}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <X className="h-6 w-6" />
+                    <X className="h-5 w-5" />
                   </motion.button>
                 </div>
 
+                <div className="flex-1 overflow-y-auto py-6 px-4">
+                  <nav className="space-y-2">
+                    {navigation.map((item, index) => {
+                      const isActive = pathname === item.href;
+                      const Icon = item.icon;
 
-                <nav className="flex-1 space-y-2 mb-6">
-                  {navigation.map((item, index) => {
-                    const isActive = pathname === item.href;
-                    const Icon = item.icon;
-
-                    return (
-                      <motion.div
-                        key={item.name}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        <Link
-                          href={item.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className={`group relative flex items-center gap-4 rounded-2xl p-4 text-base font-semibold transition-all duration-300 border ${
-                            isActive
-                              ? 'bg-linear-to-r from-sky-500/20 to-blue-500/20 text-white border-sky-400/50 shadow-lg shadow-sky-500/20'
-                              : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent hover:border-white/10'
-                          }`}
+                      return (
+                        <motion.div
+                          key={item.name}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
                         >
-
-                          {isActive && (
-                            <motion.div
-                              layoutId="activeMobileTab"
-                              className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-linear-to-b from-sky-400 to-blue-600 rounded-r-full"
-                              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                            />
-                          )}
-                          
-                          <div className={`p-2 rounded-xl transition-all duration-300 ${
-                            isActive
-                              ? 'bg-linear-to-br from-sky-400 to-blue-600 text-white'
-                              : 'bg-white/5 text-gray-400 group-hover:text-white group-hover:bg-white/10'
-                          }`}>
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          
-                          <span className="flex-1">{item.name}</span>
-                          
-                          <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </nav>
-
-
-                <motion.div
-                  className="mb-6 p-5 bg-linear-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 rounded-2xl"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 bg-linear-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-                      <Phone className="w-4 h-4 text-white" />
-                    </div>
-                    <h3 className="text-white font-bold text-sm">Contact rapid</h3>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    {contactInfo.map((info, index) => (
-                      <div key={index} className="flex items-center gap-3 text-sm">
-                        <info.icon className="w-4 h-4 text-sky-400 shrink-0" />
-                        {info.href ? (
-                          <a 
-                            href={info.href} 
-                            className="text-gray-300 hover:text-white transition-colors"
+                          <Link
+                            href={item.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={`group flex items-center gap-3 rounded-xl p-3 text-sm font-medium transition-all duration-200 ${isActive
+                                ? 'bg-primary/5 text-primary'
+                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                              }`}
                           >
-                            {info.text}
-                          </a>
-                        ) : (
-                          <span className="text-gray-400">{info.text}</span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+                            <Icon className={`h-5 w-5 ${isActive ? 'text-primary' : 'text-slate-400 group-hover:text-primary'}`} />
+                            <span className="flex-1">{item.name}</span>
+                            <ChevronRight className={`w-4 h-4 ${isActive ? 'text-primary' : 'text-slate-300'}`} />
+                          </Link>
+                        </motion.div>
+                      );
+                    })}
+                  </nav>
+                </div>
 
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
+                <div className="p-4 border-t border-slate-100 bg-slate-50/50">
                   <Link
-                    href="/programari"
+                    href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="group relative block w-full px-6 py-4 text-center text-base font-bold text-white bg-linear-to-r from-sky-500 to-blue-600 rounded-2xl shadow-lg shadow-sky-500/50 hover:shadow-sky-500/80 transition-all duration-300 overflow-hidden"
+                    className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all active:scale-95"
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      <Calendar className="w-5 h-5" />
-                      Programează-te Online
-                    </span>
-                    <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <Calendar className="w-4 h-4" />
+                    <span>Programează-te</span>
                   </Link>
-                </motion.div>
 
-
-                <motion.div
-                  className="mt-4 pt-4 border-t border-white/5 flex items-center justify-center gap-2 text-xs text-gray-500"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                  <span>Disponibili acum</span>
-                </motion.div>
+                  <div className="mt-4 flex justify-center">
+                    <a href="tel:0740123456" className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-2">
+                      <Phone className="w-3 h-3" />
+                      0740 123 456
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </>

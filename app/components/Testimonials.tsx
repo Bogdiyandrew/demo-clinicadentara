@@ -2,15 +2,29 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
+import { Quote } from 'lucide-react';
 
-// Datele pentru testimoniale
 const testimonials = [
-  { name: "Maria Ionescu", role: "Pacientă Estetică Dentară", initials: "MI", quote: "Echipa a fost incredibil de profesionistă și atentă. Mi-au explicat fiecare pas, iar rezultatul... zâmbetul meu este complet transformat. Recomand 100%!" },
-  { name: "Alexandru Vasile", role: "Pacient Implantologie", initials: "AV", quote: "Aveam o teamă teribilă de dentist, dar aici am fost tratat fără pic de durere. Tehnologia pe care o folosesc este uimitoare. Mă simt din nou încrezător." },
-  { name: "Ioana Georgescu", role: "Pacientă Ortodonție", initials: "IG", quote: "Am terminat tratamentul cu aparatul invizibil și sunt extrem de mulțumită. Întregul proces a fost mult mai simplu decât mă așteptam. Mulțumesc echipei!" }
+  {
+    name: "Maria Ionescu",
+    role: "Pacientă Estetică Dentară",
+    initials: "MI",
+    quote: "Echipa a fost incredibil de profesionistă și atentă. Mi-au explicat fiecare pas, iar rezultatul... zâmbetul meu este complet transformat. Recomand 100%!"
+  },
+  {
+    name: "Alexandru Vasile",
+    role: "Pacient Implantologie",
+    initials: "AV",
+    quote: "Aveam o teamă teribilă de dentist, dar aici am fost tratat fără pic de durere. Tehnologia pe care o folosesc este uimitoare. Mă simt din nou încrezător."
+  },
+  {
+    name: "Ioana Georgescu",
+    role: "Pacientă Ortodonție",
+    initials: "IG",
+    quote: "Am terminat tratamentul cu aparatul invizibil și sunt extrem de mulțumită. Întregul proces a fost mult mai simplu decât mă așteptam. Mulțumesc echipei!"
+  }
 ];
 
-// Variantele de animație
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -22,70 +36,88 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 }, // Încep de jos
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       type: 'spring',
       stiffness: 100,
-      damping: 10,
+      damping: 20,
     },
   },
 };
 
 export default function Testimonials() {
   return (
-    // 'section' devine 'motion.section' cu 'whileInView'
     <motion.section
-      className="bg-gray-900 py-20 sm:py-28"
+      className="bg-slate-900 py-24 lg:py-32 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Animă când 20% e vizibil
-      variants={containerVariants} // Aplicăm varianta containerului
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
-        {/* Titlul Secțiunii */}
-        <motion.div variants={cardVariants} className="max-w-2xl mx-auto text-center">
-          <h2 className="text-base font-semibold leading-7 text-sky-400">Încredere și Rezultate</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      {/* Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.05]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+        {/* Header */}
+        <motion.div variants={cardVariants} className="max-w-2xl mx-auto text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 shadow-sm mb-6">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">
+              Încredere și Rezultate
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6 tracking-tight">
             Nu ne credeți pe cuvânt
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          </h2>
+          <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto font-light">
             Aflați de ce pacienții noștri aleg să revină și ne recomandă cu încredere prietenilor și familiei.
           </p>
         </motion.div>
 
-
         <motion.div
-          className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
         >
-          {testimonials.map((testimonial) => (
-
-            <motion.div key={testimonial.name} variants={cardVariants} className="flex flex-col bg-gray-800 rounded-2xl shadow-lg p-8">
-              
-              <div>
-                <svg className="w-10 h-10 text-sky-500" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                  <path d="M9.333 8c-2.2 0-4 1.8-4 4v10.667c0 2.2 1.8 4 4 4h4v-8H9.333V12h4V8H9.333zM22.667 8c-2.2 0-4 1.8-4 4v10.667c0 2.2 1.8 4 4 4h4v-8h-4V12h4V8h-4z" />
-                </svg>
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="flex flex-col bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:bg-slate-800 transition-colors duration-300"
+            >
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-slate-700/50 rounded-xl flex items-center justify-center">
+                  <Quote className="w-6 h-6 text-primary" />
+                </div>
               </div>
-              
-              <blockquote className="mt-6 grow text-lg font-medium leading-7 text-gray-300">
-                <p>"{testimonial.quote}"</p>
+
+              <blockquote className="grow">
+                <p className="text-lg text-slate-300 leading-relaxed italic">
+                  "{testimonial.quote}"
+                </p>
               </blockquote>
 
-              <footer className="mt-8 flex items-center gap-4">
-                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-sky-600 text-white text-lg font-bold">
+              <div className="mt-8 flex items-center gap-4 pt-6 border-t border-slate-700/50">
+                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-cyan-600 text-white text-sm font-bold shadow-lg shadow-primary/20">
                   {testimonial.initials}
                 </div>
-                
+
                 <div className="text-left">
-                  <div className="text-base font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-sm text-sky-400">{testimonial.role}</div>
+                  <div className="text-base font-bold text-white">{testimonial.name}</div>
+                  <div className="text-xs font-medium text-primary uppercase tracking-wide">{testimonial.role}</div>
                 </div>
-              </footer>
+              </div>
             </motion.div>
           ))}
         </motion.div>

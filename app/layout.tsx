@@ -1,11 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import LeftSidebar from './components/LeftSidebar';
 import MobileHeader from './components/MobileHeader';
 import Footer from './components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'ClinicDemo - Zâmbetul Tău Perfect',
@@ -21,19 +31,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ro">
+    <html lang="ro" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
       </head>
-      <body className={inter.className}>
-        <div className="flex min-h-screen bg-gray-100">
+      <body className="font-sans antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+        <div className="flex min-h-screen bg-background">
           <LeftSidebar />
-          <div className="w-full md:flex-1 md:overflow-y-auto relative">
+          <div className="w-full md:flex-1 md:ml-64 md:overflow-y-auto relative flex flex-col">
             <MobileHeader />
-            {children}
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
           </div>
         </div>
-        <Footer />
       </body>
     </html>
   );
