@@ -4,6 +4,7 @@ import './globals.css';
 import LeftSidebar from './components/LeftSidebar';
 import MobileHeader from './components/MobileHeader';
 import Footer from './components/Footer';
+import SmoothScroll from './components/SmoothScroll';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" type="image/png" />
       </head>
       <body className="font-sans antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+        <SmoothScroll />
         <div className="flex min-h-screen bg-background">
           <LeftSidebar />
           <div className="w-full md:flex-1 md:ml-64 md:overflow-y-auto relative flex flex-col">
