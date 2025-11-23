@@ -24,10 +24,6 @@ const navigation = [
   { name: 'Contact', href: '/contact', icon: Phone },
 ];
 
-const contactInfo = [
-  { icon: Phone, text: '0740 123 456', href: 'tel:0740123456' },
-];
-
 export default function MobileHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -35,7 +31,8 @@ export default function MobileHeader() {
   return (
     <>
       <motion.header
-        className="lg:hidden sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm"
+        // MODIFICARE AICI: md:hidden în loc de lg:hidden
+        className="md:hidden sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
@@ -68,7 +65,7 @@ export default function MobileHeader() {
         {mobileMenuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-50 bg-slate-900/20 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-50 bg-slate-900/20 backdrop-blur-sm md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -77,7 +74,7 @@ export default function MobileHeader() {
 
             {/* Menu Panel */}
             <motion.div
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-2xl lg:hidden overflow-y-auto border-l border-slate-100"
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-2xl md:hidden overflow-y-auto border-l border-slate-100"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -113,8 +110,8 @@ export default function MobileHeader() {
                             href={item.href}
                             onClick={() => setMobileMenuOpen(false)}
                             className={`group flex items-center gap-3 rounded-xl p-3 text-sm font-medium transition-all duration-200 ${isActive
-                                ? 'bg-primary/5 text-primary'
-                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                              ? 'bg-primary/5 text-primary'
+                              : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                               }`}
                           >
                             <Icon className={`h-5 w-5 ${isActive ? 'text-primary' : 'text-slate-400 group-hover:text-primary'}`} />

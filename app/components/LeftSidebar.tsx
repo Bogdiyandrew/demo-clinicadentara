@@ -24,7 +24,8 @@ export default function LeftSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:flex md:w-72 md:flex-col fixed inset-y-0 z-50">
+    // MODIFICARE AICI: md:w-64 în loc de md:w-72
+    <aside className="hidden md:flex md:w-64 md:flex-col fixed inset-y-0 z-50">
       <div className="flex flex-col flex-grow bg-white/80 backdrop-blur-xl border-r border-white/20 shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
         {/* Logo Area */}
         <div className="flex items-center justify-center h-24 border-b border-slate-100/50">
