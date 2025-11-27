@@ -15,7 +15,7 @@ import {
 
 const services = [
   {
-    title: 'Implanturi Dentare',
+    title: 'Implanturi dentare',
     description: 'Restaurare completă a funcționalității cu implanturi din titan de ultimă generație.',
     href: '/servicii/implant-dentar',
     icon: Stethoscope,
@@ -25,7 +25,7 @@ const services = [
     border: 'group-hover:border-primary/30'
   },
   {
-    title: 'Estetică Dentară',
+    title: 'Estetică dentară',
     description: 'Design personalizat al zâmbetului prin fațete ceramice și albire laser.',
     href: '/servicii/estetica-dentara',
     icon: Sparkles,
@@ -35,7 +35,7 @@ const services = [
     border: 'group-hover:border-secondary/30'
   },
   {
-    title: 'Ortodonție Digitală',
+    title: 'Ortodonție digitală',
     description: 'Alinierea dinților folosind alignere invizibile și scanare intraorală 3D.',
     href: '/servicii/ortodontie',
     icon: Smile,
@@ -45,7 +45,7 @@ const services = [
     border: 'group-hover:border-cyan-500/30'
   },
   {
-    title: 'Profilaxie & Igienă',
+    title: 'Profilaxie & igienă',
     description: 'Menține sănătatea orală prin detartraj cu ultrasunete și airflow.',
     href: '/servicii/preventie',
     icon: Award,
@@ -65,7 +65,7 @@ const services = [
     border: 'group-hover:border-rose-500/30'
   },
   {
-    title: 'Urgențe Non-Stop',
+    title: 'Urgențe non-stop',
     description: 'Preluare prioritară a cazurilor acute și tratament imediat al durerii.',
     href: '/servicii/urgente',
     icon: Zap,
@@ -117,19 +117,19 @@ export default function FeaturedServices() {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-white dark:bg-slate-900">
 
-      {/* --- Background Elements --- */}
+
       <div className="absolute inset-0 pointer-events-none">
-        {/* Mesh Gradients */}
+
         <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-radial-gradient from-primary/5 to-transparent blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-radial-gradient from-secondary/5 to-transparent blur-3xl translate-x-1/3 translate-y-1/3" />
 
-        {/* Grid Pattern */}
+
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.02] dark:opacity-[0.05]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* --- Header --- */}
+
         <div className="max-w-3xl mx-auto text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -154,7 +154,7 @@ export default function FeaturedServices() {
             className="text-4xl md:text-5xl font-bold font-heading text-slate-900 dark:text-white mb-6 tracking-tight"
           >
             Soluții medicale <br className="hidden sm:block" />
-            pentru un <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">zâmbet sănătos</span>
+            pentru un <span className="text-transparent bg-clip-text bg-liniar-to-r from-primary to-cyan-500">zâmbet sănătos</span>
           </motion.h2>
 
           <motion.p
@@ -168,7 +168,7 @@ export default function FeaturedServices() {
           </motion.p>
         </div>
 
-        {/* --- Services Grid --- */}
+
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -185,14 +185,14 @@ export default function FeaturedServices() {
               <Link
                 href={service.href}
                 className={`
-                  relative flex flex-col h-full p-8 rounded-[2rem] 
+                  relative flex flex-col h-full p-8 rounded-4xl
                   bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700
                   transition-all duration-500 ease-out
                   hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/50
                   ${service.glow} ${service.border}
                 `}
               >
-                {/* Icon with pulsing background */}
+
                 <div className="mb-8 relative">
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${service.bg} group-hover:scale-110 duration-500 shadow-sm`}>
                     <service.icon className={`w-8 h-8 transition-colors duration-300 ${service.color}`} />
@@ -203,7 +203,7 @@ export default function FeaturedServices() {
                   {service.title}
                 </h3>
 
-                <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 flex-grow font-light">
+                <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 grow font-light">
                   {service.description}
                 </p>
 
@@ -220,7 +220,6 @@ export default function FeaturedServices() {
           ))}
         </motion.div>
 
-        {/* --- Bottom CTA --- */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

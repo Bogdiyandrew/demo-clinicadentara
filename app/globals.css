@@ -2,25 +2,25 @@
 @import "react-day-picker/dist/style.css";
 
 :root {
-  /* Premium Color Palette */
-  --background: #f8fafc; /* Very light blue-grey for a clean medical feel */
-  --foreground: #0f172a; /* Deep slate for text */
+
+  --background: #f8fafc; 
+  --foreground: #0f172a; 
   
-  /* Primary Colors - Trust & Professionalism */
-  --primary: #0e7490; /* Cyan 700 - Deep Teal */
+
+  --primary: #0e7490; 
   --primary-foreground: #ffffff;
   
-  /* Secondary Colors - Warmth & Accent */
-  --secondary: #c0a062; /* Muted Gold - Premium accent */
+
+  --secondary: #c0a062; 
   --secondary-foreground: #ffffff;
   
-  /* Surface Colors */
+
   --card: #ffffff;
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
   
-  /* State Colors */
+
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
   --accent: #f0f9ff;
@@ -28,12 +28,12 @@
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   
-  /* Borders & Inputs */
+
   --border: #e2e8f0;
   --input: #e2e8f0;
   --ring: #0e7490;
   
-  /* Radius */
+
   --radius: 0.75rem;
 }
 
@@ -89,13 +89,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #020617; /* Very dark slate */
+    --background: #020617; 
     --foreground: #f8fafc;
     
-    --primary: #22d3ee; /* Cyan 400 - Brighter for dark mode */
+    --primary: #22d3ee; 
     --primary-foreground: #020617;
     
-    --secondary: #eab308; /* Yellow 500 - Gold */
+    --secondary: #eab308;
     --secondary-foreground: #020617;
     
     --card: #0f172a;
@@ -125,7 +125,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Utilities */
 .glass-panel {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -152,7 +151,7 @@ body {
   background-clip: text;
 }
 
-/* Smooth Scrolling */
+
 html {
   scroll-behavior: smooth;
 }

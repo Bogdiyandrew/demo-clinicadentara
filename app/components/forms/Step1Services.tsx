@@ -17,10 +17,10 @@ interface Props {
 export default function Step1Services({ onNext, onSelectService, currentService }: Props) {
   const handleSelect = (serviceName: string) => {
     onSelectService(serviceName);
-    // Trecem automat la pasul următor după o scurtă pauză
+
     setTimeout(() => {
       onNext();
-    }, 300); // 300ms
+    }, 300); 
   };
 
   return (

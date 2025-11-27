@@ -18,7 +18,7 @@ import {
 
 const services: Service[] = Object.values(serviceDatabase);
 
-// Helper pentru a asocia iconițe pe baza slug-ului (poate fi extins)
+
 const getIconForSlug = (slug: string) => {
   switch (true) {
     case slug.includes('implant'): return Stethoscope;
@@ -47,7 +47,7 @@ const cardVariants = {
 export default function ServiciiIndexPage() {
   return (
     <div className="min-h-screen bg-slate-50 relative overflow-hidden">
-      {/* Background Decorativ */}
+
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
@@ -56,7 +56,7 @@ export default function ServiciiIndexPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:px-8 lg:py-24">
         
-        {/* Header Section */}
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export default function ServiciiIndexPage() {
           </p>
         </motion.div>
 
-        {/* Grid Section */}
+
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -96,7 +96,7 @@ export default function ServiciiIndexPage() {
                     href={`/servicii/${service.slug}`}
                     className="group relative flex flex-col h-full bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                   >
-                    {/* Hover Gradient Blob */}
+
                     <div className="absolute -right-10 -top-10 w-32 h-32 bg-sky-50 rounded-full blur-2xl group-hover:bg-sky-100 transition-colors duration-300" />
 
                     <div className="relative z-10 mb-6">
@@ -109,7 +109,7 @@ export default function ServiciiIndexPage() {
                       {service.title}
                     </h3>
 
-                    <p className="text-slate-500 leading-relaxed mb-8 flex-grow">
+                    <p className="text-slate-500 leading-relaxed mb-8 grow">
                       {service.shortDesc}
                     </p>
 

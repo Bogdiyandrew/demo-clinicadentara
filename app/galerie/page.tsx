@@ -6,7 +6,7 @@ import { Sparkles, Filter } from 'lucide-react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import FinalCTA from '../components/FinalCTA';
 
-// Using the same images for demo purposes since we hit the generation limit
+
 const caseStudies = [
   {
     id: 1,
@@ -69,7 +69,7 @@ export default function GaleriePage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Hero Section */}
+
       <section className="relative pt-32 pb-20 px-4 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-5%] w-[60%] h-[60%] rounded-full bg-primary/5 blur-[120px]" />
@@ -84,10 +84,10 @@ export default function GaleriePage() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4" />
-              Portofoliu Cazuri
+              Portofoliu cazuri
             </span>
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-slate-900 mb-6">
-              Transformări <span className="text-gradient">Spectaculoase</span>
+              Transformări <span className="text-gradient">spectaculoase</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Descoperă rezultatele muncii noastre. Fiecare zâmbet spune o poveste despre pasiune,
@@ -97,11 +97,11 @@ export default function GaleriePage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
+
       <section className="py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
 
-          {/* Filters */}
+
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             {filterCategories.map((category) => (
               <button
@@ -120,7 +120,7 @@ export default function GaleriePage() {
             ))}
           </div>
 
-          {/* Grid */}
+
           <motion.div
             layout
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12"

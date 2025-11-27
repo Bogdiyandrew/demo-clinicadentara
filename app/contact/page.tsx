@@ -28,12 +28,12 @@ export default function ContactPage() {
             
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Informații Rapide</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Informații rapide</h2>
               <div className="space-y-4">
                 <div className="flex items-start">
                   <PhoneIcon className="shrink-0 w-6 h-6 text-sky-600 mt-1" />
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900">Telefon Programări</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">Telefon programări</h3>
                     <a href="tel:0740123456" className="text-lg text-gray-700 hover:text-sky-600">0740 123 456</a>
                   </div>
                 </div>
@@ -91,10 +91,10 @@ export default function ContactPage() {
           <div className="bg-gray-50 p-8 lg:p-12 rounded-lg shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Trimite-ne un mesaj</h2>
             <form action="#" method="POST" className="space-y-6">
-              {/* Nume */}
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Nume și Prenume
+                  Nume și prenume
                 </label>
                 <input
                     type="text"

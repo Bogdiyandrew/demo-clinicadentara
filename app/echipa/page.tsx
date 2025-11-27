@@ -28,7 +28,7 @@ const team = [
     },
     {
         name: 'Dr. Elena Ionescu',
-        role: 'Medic Primar Ortodonție',
+        role: 'Medic primar ortodonție',
         specialization: 'Aparate Dentare & Invisalign',
         image: '/team/member-2.png',
         bio: 'Specialistă în ortodonție invizibilă, Dr. Ionescu transformă zâmbete cu răbdare și precizie, folosind cele mai noi tehnologii.',
@@ -52,7 +52,7 @@ const team = [
     },
     {
         name: 'Asist. Maria Dumitrescu',
-        role: 'Asistentă Șefă',
+        role: 'Asistentă şefă',
         specialization: 'Igienă & Profilaxie',
         image: '/team/member-4.png',
         bio: 'Sufletul clinicii noastre, Maria se asigură că fiecare pacient se simte relaxat și bine îngrijit pe parcursul vizitei.',
@@ -106,7 +106,7 @@ const itemVariants = {
 export default function TeamPage() {
     return (
         <div className="min-h-screen bg-slate-50">
-            {/* Hero Section */}
+
             <section className="relative pt-32 pb-20 px-4 overflow-hidden">
                 <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -118,11 +118,11 @@ export default function TeamPage() {
                         transition={{ duration: 0.6 }}
                     >
                         <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
-                            Echipa Noastră
+                            Echipa noastră
                         </span>
                         <h1 className="text-4xl md:text-6xl font-bold font-heading text-slate-900 mb-6">
                             Experți dedicați <br />
-                            <span className="text-gradient">Zâmbetului Tău</span>
+                            <span className="text-gradient">Zâmbetului tău</span>
                         </h1>
                         <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
                             Cunoaște oamenii din spatele tehnologiei. O echipă de profesioniști pasionați,
@@ -132,7 +132,7 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Team Grid */}
+
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
@@ -148,14 +148,14 @@ export default function TeamPage() {
                                 variants={itemVariants}
                                 className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100"
                             >
-                                <div className="aspect-[3/4] relative overflow-hidden bg-slate-100">
+                                <div className="aspect-3/4 relative overflow-hidden bg-slate-100">
                                     <Image
                                         src={member.image}
                                         alt={member.name}
                                         fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                                         <div className="flex gap-4">
                                             <a href={member.social.linkedin} className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white hover:text-primary transition-colors">
                                                 <Linkedin className="w-5 h-5" />
@@ -186,12 +186,12 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Values Section */}
+
             <section className="py-20 px-4 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4">
-                            Valorile Care Ne Ghidează
+                            Valorile care ne ghideazǎ
                         </h2>
                         <p className="text-slate-600 max-w-2xl mx-auto">
                             Credem că stomatologia modernă înseamnă mai mult decât tratamente – înseamnă o relație bazată pe încredere și respect.

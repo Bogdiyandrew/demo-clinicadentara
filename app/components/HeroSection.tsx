@@ -20,9 +20,9 @@ const fadeInUp: Variants = {
 };
 
 const stats = [
-  { label: 'Pacienți Fericiți', value: '15k+' },
-  { label: 'Ani de Excelență', value: '15+' },
-  { label: 'Medici Specialiști', value: '8' },
+  { label: 'Pacienți Fericiți', value: '1k+' },
+  { label: 'Ani de Excelență', value: '12+' },
+  { label: 'Medici Specialiști', value: '7' },
 ];
 
 export default function HeroSection() {
@@ -41,7 +41,6 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-[95vh] flex items-center overflow-hidden bg-slate-50 dark:bg-slate-950">
 
-      {/* --- Background Ambient Layer --- */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[60%] h-[60%] rounded-full bg-primary/5 blur-[120px]" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[100px]" />
@@ -51,7 +50,7 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20 pb-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
 
-          {/* --- Left Content --- */}
+
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
 
             <motion.div
@@ -78,8 +77,8 @@ export default function HeroSection() {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold font-heading tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1]"
             >
               Zâmbetul tău, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-primary bg-[length:200%_auto] animate-gradient-x">
-                Prioritatea noastră.
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-cyan-500 to-primary bg-size-[200%_auto] animate-gradient-x">
+                prioritatea noastră.
               </span>
             </motion.h1>
 
@@ -107,7 +106,7 @@ export default function HeroSection() {
               >
                 <span className="relative z-10">Programează-te</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </Link>
 
               <Link
@@ -115,11 +114,10 @@ export default function HeroSection() {
                 className="px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
                 <PlayCircle className="w-5 h-5 text-secondary" />
-                Vezi Servicii
+                Vezi servicii
               </Link>
             </motion.div>
 
-            {/* Trust Stats */}
             <motion.div
               custom={4}
               initial="hidden"
@@ -136,22 +134,22 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* --- Right Visual Content --- */}
-          <div className="relative lg:h-[700px] flex items-center justify-center perspective-1000 hidden lg:flex">
-            {/* Abstract Background Shapes */}
+
+          <div className="relative lg:h-[700px] flex items-center justify-center perspective-1000 lg:flex">
+
             <motion.div
               style={{ y: y2, opacity }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-linear-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10"
             />
 
-            {/* Main Image Container */}
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 50 }}
               className="relative w-full max-w-lg mx-auto"
             >
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border-[8px] border-white dark:border-slate-800 bg-white dark:bg-slate-900">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border-8 border-white dark:border-slate-800 bg-white dark:bg-slate-900">
                 <Image
                   src="/herosection.png"
                   alt="Clinica Dentara Modernă"
@@ -161,11 +159,11 @@ export default function HeroSection() {
                   priority
                 />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
+
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
               </div>
 
-              {/* Floating Cards */}
+
               <motion.div
                 style={{ y: y1 }}
                 className="absolute -right-12 top-24 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-[200px]"
@@ -177,7 +175,7 @@ export default function HeroSection() {
                   <div className="p-2 bg-emerald-100 dark:bg-emerald-500/20 rounded-lg">
                     <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
-                  <span className="text-sm font-bold text-slate-900 dark:text-white">Garanție Extinsă</span>
+                  <span className="text-sm font-bold text-slate-900 dark:text-white">Garanție extinsǎ</span>
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-tight">
                   Tratamente sigure și durabile pentru zâmbetul tău.
@@ -197,7 +195,7 @@ export default function HeroSection() {
                   "Profesionalism și grijă deosebită. Recomand cu încredere!"
                 </p>
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-[10px] text-white font-bold">
+                  <div className="w-6 h-6 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center text-[10px] text-white font-bold">
                     MP
                   </div>
                   <span className="text-[10px] text-slate-500 font-semibold uppercase tracking-wide">Maria P. - Pacient</span>

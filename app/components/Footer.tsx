@@ -10,7 +10,7 @@ export default function Footer() {
 
         <div className="mb-8 border-b border-slate-800 pb-8">
           <h3 className="text-xs font-bold uppercase text-secondary tracking-widest mb-3">
-            Notă Importantă
+            Notă importantă
           </h3>
           <p className="text-sm text-slate-400 leading-relaxed max-w-2xl mx-auto">
             Acesta este un proiect demonstrativ pentru a evidenția abilitățile de design și dezvoltare.

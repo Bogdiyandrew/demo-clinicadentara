@@ -10,7 +10,7 @@ interface Props {
 
 export default function Step3Details({ onSubmit, onBack, onUpdateData, formData }: Props) {
   const { name, phone, email } = formData;
-  const canSubmit = name && phone && email; // Validare simplă
+  const canSubmit = name && phone && email; 
 
   return (
     <form onSubmit={onSubmit}>
@@ -18,10 +18,10 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
       <p className="mt-2 text-center text-gray-600">Confirmați detaliile de contact.</p>
 
       <div className="mt-8 space-y-6">
-        {/* Nume */}
+
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            Nume și Prenume
+            Nume și prenume
           </label>
           <input
             type="text"
@@ -33,7 +33,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
           />
         </div>
 
-        {/* Telefon */}
+
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
             Telefon
@@ -48,7 +48,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
           />
         </div>
 
-        {/* Email */}
+
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">
             Email
@@ -64,7 +64,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
         </div>
       </div>
 
-      {/* Butoane de Navigare */}
+
       <div className="mt-12 flex justify-between">
         <button
           type="button"
@@ -78,7 +78,7 @@ export default function Step3Details({ onSubmit, onBack, onUpdateData, formData 
           disabled={!canSubmit}
           className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:bg-gray-400"
         >
-          Trimite Programarea
+          Trimite programarea
         </button>
       </div>
     </form>

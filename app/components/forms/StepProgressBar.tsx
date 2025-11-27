@@ -7,7 +7,7 @@ interface Props {
 
 const steps = [
   { id: 1, name: 'Serviciu' },
-  { id: 2, name: 'Data și Ora' },
+  { id: 2, name: 'Data și ora' },
   { id: 3, name: 'Detalii' },
 ];
 

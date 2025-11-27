@@ -10,6 +10,8 @@ import {
   Home,
   Users,
   Sparkles,
+  Gem,
+  Building,
   Image as ImageIcon,
   Phone,
   Calendar,
@@ -20,8 +22,11 @@ const navigation = [
   { name: 'Acasă', href: '/', icon: Home },
   { name: 'Servicii', href: '/servicii', icon: Sparkles },
   { name: 'Echipa', href: '/echipa', icon: Users },
+  { name: 'Preturi', href: '/preturi', icon: Gem },
   { name: 'Galerie', href: '/galerie', icon: ImageIcon },
   { name: 'Contact', href: '/contact', icon: Phone },
+  {name: 'Programare directǎ', href: '/programari', icon: Building },
+
 ];
 
 export default function MobileHeader() {
@@ -31,7 +36,7 @@ export default function MobileHeader() {
   return (
     <>
       <motion.header
-        // MODIFICARE AICI: md:hidden în loc de lg:hidden
+
         className="md:hidden sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -39,7 +44,7 @@ export default function MobileHeader() {
       >
         <div className="flex items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+            <div className="w-9 h-9 bg-linear-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col">
@@ -72,7 +77,7 @@ export default function MobileHeader() {
               onClick={() => setMobileMenuOpen(false)}
             />
 
-            {/* Menu Panel */}
+
             <motion.div
               className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-2xl md:hidden overflow-y-auto border-l border-slate-100"
               initial={{ x: '100%' }}

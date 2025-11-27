@@ -15,7 +15,7 @@ export interface Service {
 export const serviceDatabase: Record<string, Service> = {
   'implant-dentar': {
     slug: 'implant-dentar',
-    title: 'Implanturi Dentare',
+    title: 'Implanturi dentare',
     shortDesc: 'Soluția ideală pentru înlocuirea dinților lipsă, redând funcționalitatea și estetica naturală.',
     longDesc: `Implantul dentar este cea mai modernă și eficientă soluție pentru înlocuirea unuia sau mai multor dinți lipsă. Acesta constă într-un șurub din titan sau zirconiu, care înlocuiește rădăcina dintelui natural, fiind inserat în osul maxilar.
 
@@ -35,7 +35,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'estetica-dentara': {
     slug: 'estetica-dentara',
-    title: 'Estetică Dentară',
+    title: 'Estetică dentară',
     shortDesc: 'Zâmbetul perfect prin fațete dentare, albire profesională și design digital al zâmbetului.',
     longDesc: `Estetica dentară nu este doar despre frumusețe, ci și despre încredere în sine. Folosim tehnologii avansate precum Digital Smile Design (DSD) pentru a proiecta zâmbetul ideal înainte de a începe tratamentul.
 
@@ -115,7 +115,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'protetica-dentara': {
     slug: 'protetica-dentara',
-    title: 'Protetică Dentară',
+    title: 'Protetică dentară',
     shortDesc: 'Restaurarea integrității arcadelor dentare prin coroane, punți și proteze estetice.',
     longDesc: `Protetica dentară refaçe echilibrul funcțional și estetic al gurii atunci când există dinți distruși coronar sau lipsă. Utilizăm materiale de ultimă generație, precum ceramica presată (E-max) și Zirconiul Multilayer, care imită perfect transluciditatea dintelui natural.
 
@@ -135,7 +135,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'chirurgie-orala': {
     slug: 'chirurgie-orala',
-    title: 'Chirurgie Orală',
+    title: 'Chirurgie orală',
     shortDesc: 'Intervenții chirurgicale complexe, extracții de molari de minte și adiții osoase.',
     longDesc: `Chirurgia orală cuprinde o gamă largă de manopere, de la extracții dentare complexe (molari de minte incluși, canini incluși), până la rezecții apicale și chirurgie pre-protetică.
 
@@ -175,7 +175,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'profilaxie': {
     slug: 'profilaxie',
-    title: 'Profilaxie și Igienă',
+    title: 'Profilaxie și igienă',
     shortDesc: 'Prevenirea afecțiunilor dentare prin igienizări profesionale periodice.',
     longDesc: `Cea mai bună metodă de tratament este prevenția. Ședințele periodice de profilaxie (recomandate o dată la 6 luni) te ajută să eviți tratamentele complexe și costisitoare în viitor.
 

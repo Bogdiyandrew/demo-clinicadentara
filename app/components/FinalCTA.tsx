@@ -9,7 +9,7 @@ export default function FinalCTA() {
   return (
     <section className="relative bg-slate-900 py-24 sm:py-32 overflow-hidden">
 
-      {/* Background Elements */}
+
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
@@ -39,7 +39,7 @@ export default function FinalCTA() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mb-8 leading-tight"
         >
           Ești pregătit să-ți transformi{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-cyan-400">
             zâmbetul?
           </span>
         </motion.h2>
@@ -67,10 +67,10 @@ export default function FinalCTA() {
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               <Calendar className="w-5 h-5" />
-              Programează-te Online
+              Programează-te online
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+            <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </Link>
 
           <Link

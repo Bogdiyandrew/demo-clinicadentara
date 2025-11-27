@@ -187,7 +187,7 @@ export default function ProgramariPage() {
               className="group flex items-center justify-center gap-2 w-full px-6 py-4 bg-linear-to-r from-sky-500 to-blue-600 text-white font-bold rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <Home className="w-5 h-5" />
-              Înapoi Acasă
+              Înapoi acasǎ
             </Link>
           </motion.div>
         </motion.div>
@@ -217,7 +217,7 @@ export default function ProgramariPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-sky-100 border border-sky-200 rounded-full mb-6">
             <Calendar className="w-4 h-4 text-sky-600" />
             <span className="text-sm font-semibold text-sky-700 uppercase tracking-wider">
-              Programare Online
+              Programare online
             </span>
           </div>
 
