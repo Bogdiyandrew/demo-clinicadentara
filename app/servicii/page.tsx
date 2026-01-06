@@ -4,13 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { serviceDatabase, Service } from '@/lib/serviceDatabase';
-import { 
-  ArrowRight, 
-  Sparkles, 
-  Stethoscope, 
-  Smile, 
-  Award, 
-  HeartPulse, 
+import {
+  ArrowRight,
+  Sparkles,
+  Stethoscope,
+  Smile,
+  Award,
+  HeartPulse,
   Zap,
   Activity,
   Microscope
@@ -55,9 +55,9 @@ export default function ServiciiIndexPage() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:px-8 lg:py-24">
-        
 
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -66,21 +66,21 @@ export default function ServiciiIndexPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
             <HeartPulse className="w-4 h-4 text-sky-500" />
             <span className="text-sm font-bold text-slate-600 uppercase tracking-wider">
-              Tratamente Premium
+              Tratamente premium
             </span>
           </div>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-6">
-            Serviciile <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-blue-600">Noastre</span>
+            Serviciile <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-blue-600">noastre</span>
           </h1>
-          
+
           <p className="text-lg text-slate-600 leading-relaxed">
             Descoperă gama noastră completă de intervenții stomatologice, realizate cu tehnologie de ultimă generație pentru confortul și siguranța ta.
           </p>
         </motion.div>
 
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -89,7 +89,7 @@ export default function ServiciiIndexPage() {
           {services.length > 0 ? (
             services.map((service) => {
               const Icon = getIconForSlug(service.slug);
-              
+
               return (
                 <motion.div key={service.slug} variants={cardVariants} className="h-full">
                   <Link
@@ -130,4 +130,4 @@ export default function ServiciiIndexPage() {
       </div>
     </div>
   );
-}
+} 

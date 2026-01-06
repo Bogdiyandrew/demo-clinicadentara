@@ -19,7 +19,7 @@ export interface Service {
 export const serviceDatabase: Record<string, Service> = {
   'implant-dentar': {
     slug: 'implant-dentar',
-    title: 'Implanturi Dentare',
+    title: 'Implanturi dentare',
     shortDesc: 'Soluția ideală pentru înlocuirea dinților lipsă, redând funcționalitatea și estetica naturală.',
     longDesc: `Implantul dentar este cea mai modernă și eficientă soluție pentru înlocuirea unuia sau mai multor dinți lipsă. Acesta constă într-un șurub din titan sau zirconiu, care înlocuiește rădăcina dintelui natural, fiind inserat în osul maxilar.
 
@@ -39,7 +39,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'estetica-dentara': {
     slug: 'estetica-dentara',
-    title: 'Estetică Dentară',
+    title: 'Estetică dentară',
     shortDesc: 'Zâmbetul perfect prin fațete dentare, albire profesională și design digital al zâmbetului.',
     longDesc: `Estetica dentară nu este doar despre frumusețe, ci și despre încredere în sine. Folosim tehnologii avansate precum Digital Smile Design (DSD) pentru a proiecta zâmbetul ideal înainte de a începe tratamentul.
 
@@ -79,7 +79,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'endodontie': {
     slug: 'endodontie',
-    title: 'Endodonție (Canal)',
+    title: 'Endodonție (canal)',
     shortDesc: 'Salvarea dinților naturali prin tratamente de canal precise, realizate sub microscop.',
     longDesc: `Endodonția modernă realizată sub microscop permite salvarea dinților care altfel ar fi extrași. Tratamentul de canal presupune îndepărtarea nervului inflamat sau infectat, curățarea și dezinfectarea canalelor radiculare și obturarea (sigilarea) acestora.
 
@@ -119,7 +119,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'protetica-dentara': {
     slug: 'protetica-dentara',
-    title: 'Protetică Dentară',
+    title: 'Protetică dentară',
     shortDesc: 'Restaurarea integrității arcadelor dentare prin coroane, punți și proteze estetice.',
     longDesc: `Protetica dentară refaçe echilibrul funcțional și estetic al gurii atunci când există dinți distruși coronar sau lipsă. Utilizăm materiale de ultimă generație, precum ceramica presată (E-max) și Zirconiul Multilayer, care imită perfect transluciditatea dintelui natural.
 
@@ -139,7 +139,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'chirurgie-orala': {
     slug: 'chirurgie-orala',
-    title: 'Chirurgie Orală',
+    title: 'Chirurgie orală',
     shortDesc: 'Intervenții chirurgicale complexe, extracții de molari de minte și adiții osoase.',
     longDesc: `Chirurgia orală cuprinde o gamă largă de manopere, de la extracții dentare complexe (molari de minte incluși, canini incluși), până la rezecții apicale și chirurgie pre-protetică.
 
@@ -159,7 +159,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'pedodontie': {
     slug: 'pedodontie',
-    title: 'Pedodonție (Copii)',
+    title: 'Pedodonție (copii)',
     shortDesc: 'Tratamente dedicate copiilor într-un mediu prietenos, fără frică de dentist.',
     longDesc: `Sănătatea orală a copilului tău este esențială pentru o dezvoltare armonioasă. Pedodonția se ocupă cu îngrijirea dinților de lapte și a dinților permanenți tineri.
 
@@ -179,7 +179,7 @@ export const serviceDatabase: Record<string, Service> = {
   },
   'profilaxie': {
     slug: 'profilaxie',
-    title: 'Profilaxie și Igienă',
+    title: 'Profilaxie și igienă',
     shortDesc: 'Prevenirea afecțiunilor dentare prin igienizări profesionale periodice.',
     longDesc: `Cea mai bună metodă de tratament este prevenția. Ședințele periodice de profilaxie (recomandate o dată la 6 luni) te ajută să eviți tratamentele complexe și costisitoare în viitor.
 
@@ -215,7 +215,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-      {/* Hero Section */}
       <div className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
@@ -229,14 +228,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Înapoi la Servicii
+            Înapoi la servicii
           </Link>
 
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm mb-6">
               <Sparkles className="w-4 h-4 text-secondary" />
               <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">
-                Tratament Premium
+                Tratament premium
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight">
@@ -249,11 +248,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
 
-          {/* Main Content */}
           <div className="lg:col-span-2">
             <div className="prose prose-lg prose-slate dark:prose-invert max-w-none mb-16">
               <p className="text-slate-600 dark:text-slate-300 whitespace-pre-line leading-relaxed">
@@ -265,7 +262,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Clock className="w-5 h-5 text-primary" />
               </div>
-              Etapele Tratamentului
+              Etapele tratamentului
             </h2>
 
             <div className="space-y-6">
@@ -275,7 +272,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   className="group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
                 >
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm font-bold text-primary border border-slate-200 dark:border-slate-700 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm font-bold text-primary border border-slate-200 dark:border-slate-700 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                       {index + 1}
                     </div>
                     <div>
@@ -292,13 +289,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
 
-          {/* Sidebar / Benefits */}
           <div className="lg:col-span-1">
             <div className="sticky top-32">
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-black/20">
                 <h2 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-secondary" />
-                  Beneficii Principale
+                  Beneficii principale
                 </h2>
                 <ul className="space-y-4">
                   {service.benefits.map((benefit, index) => (
@@ -316,7 +312,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     href="/contact"
                     className="block w-full py-4 px-6 bg-primary hover:bg-primary/90 text-white text-center font-bold rounded-xl transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1"
                   >
-                    Programează o Consultație
+                    Programează o consultație
                   </Link>
                   <p className="mt-4 text-center text-xs text-slate-400">
                     Prima consultație include planul de tratament.

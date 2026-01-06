@@ -19,7 +19,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'ClinicDemo - Zâmbetul Tău Perfect',
+  title: 'ClinicDemo - Zâmbetul tău perfect',
   description: 'Demo uimitor pentru o clinică dentară modernă.',
   icons: {
     icon: '/laga.png',

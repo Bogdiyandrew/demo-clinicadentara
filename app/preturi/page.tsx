@@ -3,12 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  Sparkles, 
-  ShieldCheck, 
-  Activity, 
-  Gem, 
-  Info, 
+import {
+  Sparkles,
+  ShieldCheck,
+  Activity,
+  Gem,
+  Info,
   ArrowRight,
   CreditCard,
   Wallet
@@ -19,7 +19,7 @@ const priceCategories = [
     category: 'Consultații și Prevenție',
     description: 'Primul pas către o sănătate orală perfectă.',
     icon: ShieldCheck,
-    theme: 'emerald', // pentru culori dinamice
+    theme: 'emerald',
     services: [
       { name: 'Consultație inițială + Plan tratament', price: '150 RON' },
       { name: 'Igienizare completă (detartraj, periaj, airflow)', price: '350 RON' },
@@ -60,7 +60,7 @@ const priceCategories = [
   },
 ];
 
-// Helper pentru clase de culoare dinamice
+
 const getThemeClasses = (theme: string) => {
   const themes: Record<string, { icon: string; bg: string; border: string }> = {
     emerald: { icon: 'text-emerald-600', bg: 'bg-emerald-500/10', border: 'group-hover:border-emerald-500/30' },
@@ -87,8 +87,7 @@ const cardVariants = {
 export default function PreturiPage() {
   return (
     <div className="bg-slate-50 min-h-screen relative overflow-hidden">
-      
-      {/* Background Decorativ */}
+
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-sky-100/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
@@ -96,9 +95,9 @@ export default function PreturiPage() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 lg:px-8 lg:py-24">
-        
-        {/* --- Header --- */}
-        <motion.div 
+
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -110,18 +109,17 @@ export default function PreturiPage() {
               Investiție transparentă
             </span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
             Costuri clare, <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-blue-600">fără surprize</span>
           </h1>
-          
+
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Credem în transparență totală. Mai jos găsești lista de prețuri pentru cele mai comune proceduri. Pentru un plan exact, te așteptăm la o consultație.
           </p>
         </motion.div>
 
-        {/* --- Price Categories Grid --- */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -129,16 +127,15 @@ export default function PreturiPage() {
         >
           {priceCategories.map((category, index) => {
             const theme = getThemeClasses(category.theme);
-            
+
             return (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={cardVariants}
                 className={`group bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 ${theme.border}`}
               >
                 <div className="flex flex-col md:flex-row gap-8">
-                  
-                  {/* Category Header (Left side on Desktop) */}
+
                   <div className="md:w-1/3 flex flex-col items-start">
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${theme.bg}`}>
                       <category.icon className={`w-6 h-6 ${theme.icon}`} />
@@ -151,7 +148,6 @@ export default function PreturiPage() {
                     </p>
                   </div>
 
-                  {/* Services List (Right side) */}
                   <div className="md:w-2/3 w-full">
                     <ul className="space-y-4">
                       {category.services.map((service, sIndex) => (
@@ -173,8 +169,7 @@ export default function PreturiPage() {
           })}
         </motion.div>
 
-        {/* --- Footer Info / Disclaimer --- */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -198,10 +193,10 @@ export default function PreturiPage() {
                 href="/programari"
                 className="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all hover:-translate-y-1 shadow-lg shadow-slate-900/20"
               >
-                Programează o Consultație
+                Programează o consultație
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
-              
+
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-colors"
@@ -209,10 +204,10 @@ export default function PreturiPage() {
                 Întreabă-ne
               </Link>
             </div>
-            
+
             <div className="mt-8 flex items-center justify-center gap-2 text-sm text-slate-500">
-               <CreditCard className="w-4 h-4" />
-               <span>Acceptăm plata cu cardul și în rate fără dobândă</span>
+              <CreditCard className="w-4 h-4" />
+              <span>Acceptăm plata cu cardul și în rate fără dobândă</span>
             </div>
           </div>
         </motion.div>

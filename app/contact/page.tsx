@@ -5,10 +5,10 @@ export default function ContactPage() {
   return (
 
     <div className="bg-white min-h-screen">
-      
+
 
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        
+
 
         <div className="text-center mb-16">
           <EnvelopeIcon className="w-12 h-12 text-sky-600 mx-auto" />
@@ -22,10 +22,10 @@ export default function ContactPage() {
 
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
 
           <div className="space-y-10">
-            
+
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Informații rapide</h2>
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Hartă</h2>
-        
+
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.998450176813!2d26.10018621541018!3d44.43792227910118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff46c0b7c1c7%3A0x8f7f139f86f2b2b!2sPalatul%20Parlamentului!5e0!3m2!1sro!2sro!4v1678886000000"
                 width="100%"
@@ -97,15 +97,15 @@ export default function ContactPage() {
                   Nume și prenume
                 </label>
                 <input
-                    type="text"
-                    id="name"
-                     name="name"
-                     required
-                     className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-gray-900"
-/>
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-gray-900"
+                />
 
               </div>
-              
+
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -147,14 +147,14 @@ export default function ContactPage() {
                   className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-gray-900"
                 />
               </div>
-              
+
 
               <div>
                 <button
                   type="submit"
                   className="w-full px-6 py-4 bg-sky-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-sky-700 transition-colors cursor-pointer"
                 >
-                  Trimite Mesajul
+                  Trimite mesajul
                 </button>
               </div>
             </form>
