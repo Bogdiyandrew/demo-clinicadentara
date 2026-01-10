@@ -154,7 +154,7 @@ export default function FeaturedServices() {
             className="text-4xl md:text-5xl font-bold font-heading text-slate-900 dark:text-white mb-6 tracking-tight"
           >
             Soluții medicale <br className="hidden sm:block" />
-            pentru un <span className="text-transparent bg-clip-text bg-liniar-to-r from-primary to-cyan-500">zâmbet sănătos</span>
+            pentru un <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-cyan-500">zâmbet sănătos</span>
           </motion.h2>
 
           <motion.p
